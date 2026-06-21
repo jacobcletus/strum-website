@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRUM — Construction Media | Melbourne</title>
+  <meta name="description" content="STRUM is a Melbourne construction media studio. We capture the craft, the people and the story behind every build — film, photography and aerial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #FF5722;
+      --orange-deep: #E84A18;
+      --ink: #141414;
+      --muted: #9A9A9A;
+      --line: #EAEAEA;
+      --bg: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(20px, 3vw, 36px) clamp(20px, 4vw, 56px) clamp(20px, 3vw, 32px);
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    /* Hero background video — sits behind everything.
+       TO ENABLE: uncomment the <video> block in the HTML below and paste your
+       Cloudflare R2 / Bunny URL into the <source> tags. The styling is ready. */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    /* Optional scrim — uncomment if your footage is busy and the text needs contrast */
+    /* .hero::after {
+      content: "";
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.35));
+    } */
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------- NAV ---------- */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav-left { display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
+    .logo { width: 26px; height: 26px; flex-shrink: 0; }
+    .tabs { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 30px); }
+    .tab {
+      font-size: 14px; font-weight: 500; color: #FFFFFF;
+      text-decoration: none; white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .tab:hover, .tab:focus-visible { color: var(--orange); }
+    .tab.active { color: var(--orange); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .search {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid var(--line); border-radius: 24px;
+      padding: 5px 6px 5px 16px;
+    }
+    .search input {
+      border: none; outline: none; background: transparent;
+      font-family: inherit; font-size: 13px; color: var(--ink); width: 88px;
+    }
+    .search input::placeholder { color: var(--muted); }
+    .icon-btn {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; border: none;
+    }
+    .search-btn { background: var(--orange); color: #fff; }
+    .get {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--orange); color: #fff; border: none;
+      border-radius: 24px; padding: 6px 6px 6px 18px;
+      font-family: inherit; font-size: 14px; font-weight: 500;
+      white-space: nowrap; cursor: pointer; text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .get:hover, .get:focus-visible { background: var(--orange-deep); }
+    .get-btn { background: #fff; color: var(--orange); }
+    .icon-btn svg { width: 15px; height: 15px; }
+
+    /* Hamburger (mobile only) */
+    .hamburger {
+      display: none; width: 40px; height: 40px;
+      background: transparent; border: none; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+    .hamburger svg { width: 24px; height: 24px; color: #FFFFFF; }
+
+    /* Mobile dropdown */
+    .mobile-menu {
+      display: none;
+      flex-direction: column; gap: 4px;
+      margin-top: 16px;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .mobile-menu.open { max-height: 360px; }
+    .mobile-menu a {
+      font-size: 16px; font-weight: 500; color: #FFFFFF;
+      text-decoration: none; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .get { margin-top: 12px; justify-content: center; padding: 10px 18px; }
+
+    /* ---------- HERO FOOT (wordmark) ---------- */
+    .spacer { flex: 1; }
+    .hero-foot {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .wordmark {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 12vw, 168px);
+      line-height: 0.85;
+      letter-spacing: -0.03em;
+      color: var(--orange);
+    }
+    .wordmark .dot { color: var(--orange); }
+    .media {
+      font-size: clamp(11px, 1vw, 13px);
+      font-weight: 500; letter-spacing: 0.22em;
+      color: #FFFFFF; margin-top: 14px;
+    }
+    .city {
+      font-size: clamp(11px, 1vw, 12px);
+      font-weight: 500; letter-spacing: 0.1em;
+      color: #FFFFFF; white-space: nowrap;
+    }
+
+    /* ---------- LOAD ANIMATION ---------- */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .nav, .hero-foot { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+    .hero-foot { animation-delay: 0.12s; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .tabs, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    :focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+
+    /* ---------- ABOUT SECTION ---------- */
+    .about {
+      background: #FFFFFF;
+      padding: clamp(56px, 8vw, 104px) clamp(20px, 4vw, 56px);
+    }
+    .about-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      gap: clamp(28px, 5vw, 72px); align-items: start;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--orange); margin: 0 0 18px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--orange); }
+    .about-title {
+      font-family: 'Archivo', sans-serif; font-weight: 800;
+      font-size: clamp(28px, 4vw, 46px); line-height: 1.08;
+      letter-spacing: -0.02em; color: var(--ink); margin: 0;
+    }
+    .about-body p {
+      font-size: clamp(15px, 1.5vw, 18px); line-height: 1.7;
+      color: #4A4A4A; margin: 0;
+    }
+    @media (max-width: 760px) {
+      .about-inner { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+
+    <video class="hero-bg" autoplay muted loop playsinline>
+      <source src="https://pub-ed85a58e0f9547e28ba2e5d34fa66760.r2.dev/Strum%20Trailer%20v3.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-left">
+          <a href="#" aria-label="STRUM home">
+            <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="#FF5722" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+              <line x1="12" y1="3" x2="12" y2="21"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/>
+              <line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/>
+            </svg>
+          </a>
+          <div class="tabs">
+            <a class="tab active" href="#">Home</a>
+            <a class="tab" href="#about">About</a>
+            <a class="tab" href="#services">Services</a>
+            <a class="tab" href="#projects">Projects</a>
+            <a class="tab" href="#contact">Contact us</a>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <div class="search">
+            <input type="text" placeholder="Search" aria-label="Search">
+            <button class="icon-btn search-btn" aria-label="Search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+          </div>
+          <a class="get" href="#contact">
+            Get in touch
+            <span class="icon-btn get-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>
+        </button>
+      </nav>
+
+      <div class="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact us</a>
+        <a class="get" href="#contact">Get in touch
+          <span class="icon-btn get-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="hero-foot">
+        <div class="brand">
+          <h1 class="wordmark">STRUM<span class="dot">.</span></h1>
+          <div class="media">MEDIA</div>
+        </div>
+        <div class="city">AUSTRALIA</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-head">
+        <p class="eyebrow">About</p>
+        <h2 class="about-title">We capture the craft behind the build.</h2>
+      </div>
+      <div class="about-body">
+        <p>STRUM is a Melbourne construction media studio. We work alongside builders, developers and trades to document projects from groundbreaking to handover — through film, photography and aerial. The result is footage that wins work, marks milestones, and shows the people and detail behind every site.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    burger.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>
