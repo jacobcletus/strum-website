@@ -460,19 +460,19 @@
   .ab-cl-tag::before{content:"";width:24px;height:2px;background:var(--orange)}
   /* the rest — uniform, dimmed so Delta stays the hero */
   /* 24 logos -> clean borderless wall, 6 x 4, evenly spaced & optically balanced */
-  .ab-cl-grid{display:grid;grid-template-columns:repeat(6,1fr);
+  .ab-cl-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
     gap:clamp(30px,3.6vw,60px) clamp(24px,2.8vw,48px);margin-top:clamp(6px,1.4vw,18px)}
   .ab-cl-grid .cell{display:flex;align-items:center;justify-content:center;min-height:clamp(70px,7.4vw,98px)}
-  .ab-cl-grid img{max-height:42px;max-width:152px;width:auto;height:auto;object-fit:contain;
+  .ab-cl-grid img{max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;
     opacity:.6;transition:opacity .3s,transform .35s}
   .ab-cl-grid .cell:hover img{opacity:1;transform:scale(1.06)}
   .ab-cl-grid img.s-tall{max-height:60px}
   .ab-cl-grid img.s-mid{max-height:51px}
-  @media(max-width:900px){ .ab-cl-grid{grid-template-columns:repeat(4,1fr);gap:clamp(26px,4vw,40px)} } /* 24 -> 4 x 6 */
+  @media(max-width:900px){ .ab-cl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(26px,4vw,40px)} } /* 24 -> 4 x 6 */
   @media(max-width:560px){
-    .ab-cl-grid{grid-template-columns:repeat(3,1fr);gap:26px 18px}              /* 24 -> 3 x 8 */
+    .ab-cl-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 18px}              /* 24 -> 3 x 8 */
     .ab-cl-grid .cell{min-height:60px}
-    .ab-cl-grid img{max-height:32px;max-width:96px}
+    .ab-cl-grid img{max-height:32px;max-width:100%}
     .ab-cl-grid img.s-tall{max-height:46px}
   }
 
