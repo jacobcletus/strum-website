@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scotch Hill Gardens — Demolition & Early Works | Strum Media</title>
+<title>Terms & Conditions — Strum Media</title>
 <style>
   :root{
     --black:#0c0c0c;
@@ -353,59 +353,28 @@
 
   /* ===================== PROJECTS GRID ===================== */
   .pj-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px) clamp(26px,3vw,52px)}
-  .pj-card{display:block}
-  .pj-card .img{position:relative;border-radius:clamp(16px,2vw,26px);overflow:hidden;aspect-ratio:4/3;background:var(--beige)}
+  .pj-card{display:block;text-align:center}
+  .pj-card .img{position:relative;border-radius:clamp(16px,2vw,26px);overflow:hidden;aspect-ratio:4/3;background:var(--beige);text-align:left}
   .pj-card .img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.1) contrast(1.05);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
   .pj-card:hover .img img{transform:scale(1.05)}
-  .pj-card .yr{position:absolute;top:16px;left:16px;z-index:2;background:rgba(255,255,255,.92);color:#0c0c0c;
-    font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:7px 14px;border-radius:30px}
-  .pj-card .meta{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:18px;
+  .pj-card .yr{display:none}
+  .pj-card .meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin-top:18px;
     font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--grey)}
   .pj-card .meta .d{color:var(--orange)}
   .pj-card h3{margin-top:8px;font-size:clamp(28px,3.4vw,50px);font-weight:800;text-transform:uppercase;
     letter-spacing:-.03em;line-height:.96;color:#0c0c0c;transition:color .25s}
   .pj-card:hover h3{color:var(--orange)}
-  .pj-card p{margin-top:13px;font-size:15px;line-height:1.55;color:var(--grey);max-width:42ch}
+  /* breaker — brand star between title and description */
+  .pj-brk{display:block;width:20px;height:20px;margin:16px auto 0;transition:transform .4s ease}
+  .pj-brk svg{width:100%;height:100%;fill:var(--orange)}
+  .pj-card:hover .pj-brk{transform:rotate(72deg)}
+  /* centered description */
+  .pj-card .pj-desc{margin:13px auto 0;font-size:15px;line-height:1.62;color:var(--grey);max-width:46ch}
+  .pj-card .pj-desc .hi{color:#0c0c0c;font-weight:600}
   .pj-card.pj-soon .img img{filter:grayscale(.7) brightness(.62)}
   .pj-card.pj-soon h3{color:#9a958c}
   .pj-card.pj-soon:hover h3{color:var(--orange)}
   @media(max-width:760px){.pj-grid{grid-template-columns:1fr;gap:48px}}
-
-  /* ---------- CASE STUDY ---------- */
-  .cs-back{display:inline-flex;align-items:center;gap:11px;margin-bottom:28px;height:48px;padding:0 26px;
-    border-radius:40px;border:1px solid var(--line);font-size:15px;font-weight:600;letter-spacing:.01em;color:#0c0c0c;
-    transition:background .25s,color .25s,border-color .25s,gap .25s}
-  .cs-back .a{font-size:18px;line-height:1}
-  .cs-back:hover{background:#0c0c0c;color:#fff;border-color:#0c0c0c;gap:15px}
-  .cs-backwrap{background:#fff;padding:0 0 clamp(50px,8vh,100px);text-align:center}
-  .cs-backwrap .cs-back{margin-bottom:0;height:54px;padding:0 32px;font-size:16px}
-  .cs-hero{padding-bottom:clamp(28px,4vh,48px)}
-  .cs-shot{border-radius:clamp(18px,2.4vw,34px);overflow:hidden;aspect-ratio:16/8;background:var(--beige)}
-  .cs-shot img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04)}
-  .cs-grid{display:grid;grid-template-columns:.4fr .6fr;gap:clamp(30px,5vw,84px);align-items:start;padding-top:clamp(40px,6vh,76px)}
-  .cs-meta{display:flex;flex-direction:column;gap:18px;border-top:2px solid #0c0c0c;padding-top:24px}
-  .cs-meta div{display:flex;flex-direction:column;gap:4px}
-  .cs-meta .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);font-weight:600}
-  .cs-meta .v{font-size:17px;font-weight:600;color:#0c0c0c}
-  .cs-body p{font-size:clamp(15.5px,1.45vw,18px);line-height:1.72;color:#3a3833;margin-bottom:20px}
-  .cs-body p:first-child{font-size:clamp(18px,1.85vw,23px);line-height:1.55;color:#0c0c0c;font-weight:500}
-  .cs-statsband{background:#0c0c0c;color:#fff;padding:clamp(46px,7vh,82px) 0}
-  .cs-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(22px,3vw,40px)}
-  .cs-stats div{display:flex;flex-direction:column;gap:9px}
-  .cs-stats b{font-size:clamp(28px,3.5vw,50px);font-weight:800;letter-spacing:-.03em;line-height:.95}
-  .cs-stats b em{font-style:normal;color:var(--orange)}
-  .cs-stats span{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a958c}
-  .cs-galhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:clamp(26px,4vh,44px)}
-  .cs-galhead h2{font-size:clamp(30px,4.4vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
-  .cs-galhead p{font-size:14px;color:var(--grey)}
-  .cs-gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
-  .cs-gallery figure{margin:0;border-radius:clamp(14px,1.8vw,24px);overflow:hidden;aspect-ratio:4/3;background:var(--beige)}
-  .cs-gallery figure.wide{grid-column:1 / -1;aspect-ratio:16/7}
-  .cs-gallery img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-  .cs-gallery figure:hover img{transform:scale(1.04)}
-  @media(max-width:820px){.cs-grid{grid-template-columns:1fr;gap:30px}.cs-stats{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:560px){.cs-stats{grid-template-columns:repeat(2,1fr)}.cs-gallery{grid-template-columns:1fr}}
-
 </style>
 <style>
   /* mobile navigation */
@@ -460,78 +429,48 @@
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
 
-<!-- PAGE HERO -->
-<!-- CASE STUDY HERO -->
-<section class="page-hero cs-hero">
-  <div class="wrap rv">
-    <a class="cs-back" href="projects.html"><span class="a">&larr;</span> All projects</a>
-    <span class="page-eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>Project &middot; Delta Group</span>
-    <h1>Scotch Hill <em>Gardens</em></h1>
-    <p class="lead">Complex demolition and early works for Delta Group — captured in Hawthorn for Hamton Property Group.</p>
-  </div>
-</section>
+<style>
+  .legal-wrap{background:#fff}
+  .legal-hero{padding:clamp(118px,17vh,188px) 0 clamp(16px,3vh,32px)}
+  .legal-hero .lg-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--orange);margin-bottom:20px}
+  .legal-hero h1{font-size:clamp(38px,7vw,84px);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;color:#0c0c0c}
+  .legal-hero .lg-date{margin-top:16px;font-size:14px;color:var(--grey)}
+  .legal-body{padding:clamp(24px,4vh,48px) 0 clamp(70px,12vh,130px)}
+  .legal-body .wrap{max-width:860px}
+  .legal-body h2{font-size:clamp(19px,2.3vw,25px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;color:#0c0c0c;margin:40px 0 12px}
+  .legal-body p{font-size:16px;line-height:1.72;color:#444;margin-bottom:14px}
+  .legal-body a{color:var(--orange);text-decoration:underline}
+</style>
 
-<!-- HERO IMAGE -->
-<section style="background:#fff;padding:0 0 clamp(30px,5vh,60px)">
-  <div class="wrap rv">
-    <div class="cs-shot"><img src="about-hero.jpg" alt="Scotch Hill Gardens demolition, Hawthorn"></div>
-  </div>
-</section>
-
-<!-- INTRO: details + description -->
-<section class="pad" style="background:#fff;padding-top:0">
+<section class="legal-wrap legal-hero" id="top">
   <div class="wrap">
-    <div class="cs-grid rv">
-      <aside class="cs-meta">
-        <div><span class="k">Client</span><span class="v">Delta Group</span></div>
-        <div><span class="k">For</span><span class="v">Hamton Property Group</span></div>
-        <div><span class="k">Location</span><span class="v">Hawthorn, VIC</span></div>
-        <div><span class="k">Services</span><span class="v">Demolition · Early Works Film</span></div>
-        <div><span class="k">Year</span><span class="v">2026</span></div>
-      </aside>
-      <div class="cs-body">
-        <p>The Scotch Hill Gardens project in Hawthorn was captured as part of Delta Group's Victorian demolition and early works program for client Hamton Property Group.</p>
-        <p>This unique high-end residential development required a highly coordinated demolition and enabling works approach, with Delta Group delivering a challenging scope that included the protection, retention and relocation of more than 70 significant trees across the site.</p>
-        <p>Our media coverage documented the scale, detail and complexity behind the project, showcasing the demolition works, site coordination, machinery, environmental care and resource recovery outcomes. With more than 17,000 work hours completed and a resource recovery rate above 95%, the project highlighted Delta Group's capability in complex urban demolition, sustainable demolition practices and early works for major property developments.</p>
-        <p>Created for social media, website use, project marketing and long-term portfolio visibility, the content helped showcase the planning, precision and environmental responsibility behind one of Hawthorn's standout residential development sites.</p>
-      </div>
-    </div>
+    <span class="lg-eyebrow">Legal</span>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="lg-date">Last updated: July 2026</p>
   </div>
 </section>
-
-<!-- GALLERY (swap in the real Clayton stills + drone frames) -->
-<section class="pad" style="background:#fff">
+<section class="legal-wrap legal-body">
   <div class="wrap">
-    <div class="cs-galhead rv">
-      <h2>On site<span style="color:var(--orange)">.</span></h2>
-      <p>Selected stills from the Scotch Hill Gardens demolition and early works.</p>
-    </div>
-    <div class="cs-gallery rv">
-      <figure><img src="scotch-gal-1.jpg" alt="Delta Group crew at Scotch Hill Gardens"></figure>
-      <figure><img src="scotch-gal-2.jpg" alt="Delta excavator at Scotch Hill Gardens"></figure>
-      <figure class="wide"><img src="scotch-gal-3.jpg" alt="Delta demolition works at Scotch Hill Gardens"></figure>
-    </div>
+    <p>These Terms &amp; Conditions govern your access to and use of the Strum Media website (the “Site”), operated by Strum Media (ABN 15 681 384 458). By using this Site, you agree to these terms. If you do not agree, please do not use the Site.</p>
+    <h2>Intellectual property</h2>
+    <p>All content on this Site — including video, photography, graphics, text, logos and design — is owned by Strum Media or its clients and licensors and is protected by copyright and other laws. You may not copy, reproduce, distribute or use any content without our prior written permission. Client names and logos remain the property of their respective owners and are shown to represent our work.</p>
+    <h2>Use of the site</h2>
+    <p>You agree to use the Site only for lawful purposes and not to interfere with its operation or security, or attempt to access it in any unauthorised way.</p>
+    <h2>Accuracy of information</h2>
+    <p>We aim to keep the information on this Site accurate and up to date, but we provide it “as is” and make no guarantee that it is complete, current or error-free. Project examples, figures and testimonials are provided for illustration and do not guarantee any particular outcome.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, Strum Media is not liable for any loss or damage arising from your use of, or reliance on, this Site or its content. Nothing in these terms excludes, restricts or modifies any rights or guarantees you have under the Australian Consumer Law that cannot be lawfully excluded.</p>
+    <h2>Third-party links</h2>
+    <p>This Site may contain links to third-party websites, such as our social media profiles. We are not responsible for the content, policies or practices of those sites.</p>
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of Victoria, Australia, and you submit to the non-exclusive jurisdiction of the courts of that State.</p>
+    <h2>Changes to these terms</h2>
+    <p>We may update these Terms &amp; Conditions from time to time. The current version will always be available on this page.</p>
+    <h2>Contact us</h2>
+    <p>Questions about these terms? Contact us at <a href="mailto:admin@strummarketing.com.au">admin@strummarketing.com.au</a>.</p>
   </div>
 </section>
 
-<!-- Back to all projects -->
-<section class="cs-backwrap">
-  <div class="wrap rv">
-    <a class="cs-back" href="projects.html"><span class="a">&larr;</span> Back to all projects</a>
-  </div>
-</section>
-
-
-<!-- CTA -->
-<section class="pad cta-band">
-  <div class="wrap rv">
-    <h2>Your project<br>next.</h2>
-    <p>Got a build or a brand worth showing off? Let's document it properly.</p>
-    <a class="btn" href="contact.html">Start a project
-      <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
-    </a>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
