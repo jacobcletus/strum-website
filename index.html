@@ -79,6 +79,14 @@
     color:var(--orange);font-size:clamp(64px,15.5vw,250px);text-transform:uppercase}
   .hero-label{font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;
     color:#1a1a1a;padding-bottom:14px}
+  /* video hero: darken edges + light header/label for legibility */
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(to bottom,rgba(0,0,0,.32) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 50%,rgba(0,0,0,.55) 100%)}
+  .hero .hero-foot{z-index:3}
+  .hero .hero-label{color:#fff}
+  header:not(.scrolled) .nav ul a{color:#fff;opacity:.95}
+  header:not(.scrolled) .nav ul a:hover{color:var(--orange);opacity:1}
+  body:not(.menu-open) header:not(.scrolled) .burger span{background:#fff}
 
   /* ---------- MARQUEE ---------- */
   .marquee{background:var(--orange);color:#0c0c0c;overflow:hidden;border-top:2px solid #0c0c0c;border-bottom:2px solid #0c0c0c}
@@ -392,12 +400,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <!-- BACKGROUND MEDIA: white placeholder for now.
-       To go live, drop a video in here:
-       <video autoplay muted loop playsinline poster="poster.jpg">
-         <source src="showreel.mp4" type="video/mp4">
-       </video> -->
-  <div class="hero-media"></div>
+  <div class="hero-media"><video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
   <div class="hero-foot">
     <h1 class="wordmark">Strum.</h1>
     <span class="hero-label">Australia</span>
