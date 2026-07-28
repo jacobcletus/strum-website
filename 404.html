@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Strum Media</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#fa4616">
+<style>
+  :root{
+    --black:#0c0c0c;
+    --ink:#141414;
+    --white:#ffffff;
+    --offwhite:#f4f1ea;
+    --beige:#e4ddcf;
+    --orange:#fa4616;
+    --grey:#6c6760;
+    --line:rgba(20,20,20,.14);
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font);
+    background:var(--offwhite);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.3;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--orange);color:#fff}
+  .wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+
+  /* header */
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:34px;height:84px}
+  .mark{width:30px;height:30px;flex:none;display:flex;align-items:center;justify-content:center}
+  .mark svg{width:100%;height:100%;fill:var(--orange)}
+  .nav ul{display:flex;gap:34px;list-style:none;margin-right:auto}
+  .nav ul a{font-size:15px;font-weight:400;color:#1a1a1a;opacity:.85;transition:opacity .2s,color .2s}
+  .nav ul a:hover{opacity:1;color:var(--orange)}
+  .cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
+  .cta .circle{width:34px;height:34px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center}
+  .cta .circle svg{width:16px;height:16px;fill:#fff}
+  @media(max-width:720px){.nav ul{display:none}}
+
+  /* main */
+  main{flex:1;display:flex;align-items:center;padding:clamp(60px,12vh,140px) 0}
+  .e-code{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+  .e-code .num{font-size:clamp(72px,16vw,150px);font-weight:700;letter-spacing:-.04em;line-height:.9}
+  .e-code .star{width:clamp(40px,8vw,74px);height:clamp(40px,8vw,74px);flex:none}
+  .e-code .star svg{width:100%;height:100%;fill:var(--orange)}
+  .e-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--orange);margin-bottom:14px}
+  h1{font-size:clamp(28px,5vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin-bottom:20px;max-width:16ch}
+  .lead{font-size:clamp(15px,2vw,18px);color:var(--grey);max-width:44ch;margin-bottom:38px;line-height:1.5}
+  .actions{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:40px;font-size:15px;font-weight:500;transition:transform .15s,background .2s,color .2s}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* quick links */
+  .quick{margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+  .quick .mono{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--grey);margin-bottom:16px}
+  .quick-links{display:flex;flex-wrap:wrap;gap:12px 28px}
+  .quick-links a{font-size:16px;font-weight:500;transition:color .2s}
+  .quick-links a:hover{color:var(--orange)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0}
+  .f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--grey)}
+  .f-bottom a{transition:color .2s}
+  .f-bottom a:hover{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="mark" aria-label="Strum Media">
+      <svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg>
+    </a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/contact">Contact us</a></li>
+    </ul>
+    <a href="/contact" class="cta">Get in touch
+      <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="e-code">
+      <span class="num">404</span>
+      <span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
+    </div>
+    <p class="e-eyebrow">Page not found</p>
+    <h1>This page has wrapped &amp; gone to post.</h1>
+    <p class="lead">The link may be broken or the page may have moved. Let's get you back to the good stuff.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to home
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg>
+      </a>
+      <a href="/contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+
+    <div class="quick">
+      <p class="mono">Or jump to</p>
+      <div class="quick-links">
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact us</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap f-bottom">
+    <span>© 2026 Strum Media · ABN 15 681 384 458 · All rights reserved.</span>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

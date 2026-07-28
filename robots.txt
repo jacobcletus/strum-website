@@ -1,0 +1,7 @@
+# robots.txt — strummedia.com.au
+# Allow all reputable crawlers full access.
+User-agent: *
+Allow: /
+
+# XML sitemap
+Sitemap: https://www.strummedia.com.au/sitemap.xml
