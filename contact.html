@@ -21,11 +21,13 @@
 <meta property="og:title" content="Contact Strum Media — Melbourne Video Production Enquiries">
 <meta property="og:description" content="Get in touch with Strum Media for construction, property and corporate video, photography and drone content in Melbourne. Call +61 429 267 428 or email us.">
 <meta property="og:url" content="https://www.strummedia.com.au/contact">
-<meta property="og:image" content="https://www.strummedia.com.au/contact-photo.jpg">
+<meta property="og:image" content="https://www.strummedia.com.au/og-contact.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Strum Media — Melbourne Video Production Enquiries">
 <meta name="twitter:description" content="Get in touch with Strum Media for construction, property and corporate video, photography and drone content in Melbourne. Call +61 429 267 428 or email us.">
-<meta name="twitter:image" content="https://www.strummedia.com.au/contact-photo.jpg">
+<meta name="twitter:image" content="https://www.strummedia.com.au/og-contact.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -387,6 +389,30 @@
   .svc-cat .items span:hover{background:#0c0c0c;color:#fff;border-color:#0c0c0c}
   @media(max-width:780px){.twocol,.svc-cat{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
 
+  /* ---------- services dropdown (desktop) ---------- */
+  .nav ul li.has-dd{position:relative}
+  .nav ul li.has-dd>a{display:inline-flex;align-items:center;gap:6px}
+  .nav ul li.has-dd>a .chev{width:11px;height:11px;fill:currentColor;opacity:.55;transition:transform .3s,opacity .2s}
+  .nav ul li.has-dd:hover>a .chev,.nav ul li.has-dd:focus-within>a .chev{transform:rotate(180deg);opacity:1}
+  .dd{position:absolute;top:100%;left:-14px;padding-top:16px;min-width:264px;
+    opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;
+    transition:opacity .28s cubic-bezier(.2,.7,.2,1),transform .28s cubic-bezier(.2,.7,.2,1),visibility .28s}
+  .nav ul li.has-dd:hover .dd,.nav ul li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .dd-inner{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;
+    box-shadow:0 22px 48px rgba(20,16,10,.14);display:flex;flex-direction:column}
+  .dd-inner a{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:11px 16px;border-radius:11px;
+    font-size:14.5px;font-weight:500;color:#1a1a1a!important;opacity:1!important;white-space:nowrap;transition:background .2s,color .2s}
+  .dd-inner a:hover{background:var(--offwhite);color:var(--orange)!important}
+  .dd-inner a .ar{width:15px;height:15px;fill:currentColor;flex:none;opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+  .dd-inner a:hover .ar{opacity:1;transform:none}
+  .mobile-menu .mm-sub{font-size:clamp(15px,4.6vw,20px);font-weight:600;letter-spacing:0;text-transform:none;
+    color:var(--grey);padding:9px 0 9px 18px;border-bottom:1px solid var(--line)}
+  .mobile-menu .mm-sub:hover{color:var(--orange)}
+  /* active nav highlight */
+  .nav ul a.nav-active{color:var(--orange)!important;opacity:1!important}
+  header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
+  .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
+  .mobile-menu a.nav-active{color:var(--orange)!important}
 </style>
 <style>
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,5vw,80px);align-items:start}
@@ -412,7 +438,7 @@
   /* mobile navigation */
   .burger{display:none}
   .mobile-menu{position:fixed;inset:0;z-index:300;background:var(--offwhite);
-    display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 clamp(24px,7vw,64px);
+    display:flex;flex-direction:column;justify-content:flex-start;gap:2px;padding:clamp(96px,14vh,130px) clamp(24px,7vw,64px) 40px;overflow-y:auto;
     transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
   .mobile-menu a{font-size:clamp(30px,8.5vw,48px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
     color:#0c0c0c;text-decoration:none;padding:11px 0;border-bottom:1px solid var(--line);transition:color .2s}
@@ -476,28 +502,34 @@
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="/" class="mark" aria-label="Strum Media">
+    <a href="index.html" class="mark" aria-label="Strum Media">
       <svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg>
     </a>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/contact">Contact us</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dd"><a href="services.html">Services <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg></a><div class="dd"><div class="dd-inner"><a href="service-videography.html">Videography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-photography.html">Photography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-aerial-drone.html">Aerial &amp; Drone<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-social-media-management.html">Social Media Management<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-podcasting.html">Podcasting<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-content-creation.html">Content Creation<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div></div></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact us</a></li>
     </ul>
-    <a href="/contact" class="cta">Get in touch
+    <a href="contact.html" class="cta">Get in touch
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/services">Services</a>
-  <a href="/projects">Projects</a>
-  <a href="/contact">Contact us</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a class="mm-sub" href="service-videography.html">Videography</a>
+  <a class="mm-sub" href="service-photography.html">Photography</a>
+  <a class="mm-sub" href="service-aerial-drone.html">Aerial &amp; Drone</a>
+  <a class="mm-sub" href="service-social-media-management.html">Social Media Management</a>
+  <a class="mm-sub" href="service-podcasting.html">Podcasting</a>
+  <a class="mm-sub" href="service-content-creation.html">Content Creation</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact us</a>
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
 
@@ -558,16 +590,16 @@
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a href="/" class="logo">Strum<span>.</span></a>
+        <a href="index.html" class="logo">Strum<span>.</span></a>
         <p>Melbourne-based media production &amp; social media management. Video, photography and drone content that makes construction and property work look as important as it is.</p>
       </div>
       <div class="f-col">
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="f-col">
         <h4>Socials</h4>
@@ -584,8 +616,8 @@
     <div class="f-bottom">
       <span>© 2026 Strum Media · ABN 15 681 384 458 · All rights reserved.</span>
       <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
@@ -652,5 +684,13 @@
   })();
 </script>
 
+<script>
+(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
+var sec=cur;
+if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
+else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+</script>
 </body>
 </html>

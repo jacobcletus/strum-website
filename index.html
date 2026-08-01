@@ -12,22 +12,22 @@
 
   gtag('config', 'G-L6NXGCSZXF');
 </script>
-<title>Construction &amp; Property Video Production Melbourne | Strum Media</title>
+<title>Construction Video Production Melbourne | Strum Media</title>
 <link rel="canonical" href="https://www.strummedia.com.au/">
 <meta name="description" content="Melbourne video production, photography &amp; drone content for construction, property &amp; corporate brands. Showcase your projects — get in touch with Strum Media.">
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Strum Media">
-<meta property="og:title" content="Construction &amp; Property Video Production Melbourne | Strum Media">
+<meta property="og:title" content="Construction Video Production Melbourne | Strum Media">
 <meta property="og:description" content="Melbourne video production, photography &amp; drone content for construction, property &amp; corporate brands. Showcase your projects — get in touch with Strum Media.">
 <meta property="og:url" content="https://www.strummedia.com.au/">
-<meta property="og:image" content="https://www.strummedia.com.au/hero-poster.jpg">
-<meta property="og:image:width" content="1920">
-<meta property="og:image:height" content="1080">
+<meta property="og:image" content="https://www.strummedia.com.au/og-index.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Construction &amp; Property Video Production Melbourne | Strum Media">
+<meta name="twitter:title" content="Construction Video Production Melbourne | Strum Media">
 <meta name="twitter:description" content="Melbourne video production, photography &amp; drone content for construction, property &amp; corporate brands. Showcase your projects — get in touch with Strum Media.">
-<meta name="twitter:image" content="https://www.strummedia.com.au/hero-poster.jpg">
+<meta name="twitter:image" content="https://www.strummedia.com.au/og-index.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -374,12 +374,36 @@
     .cap-list .fill{display:none}
     .reels{grid-template-columns:1fr;gap:18px;max-width:340px;margin-left:auto;margin-right:auto}
   }
+  /* ---------- services dropdown (desktop) ---------- */
+  .nav ul li.has-dd{position:relative}
+  .nav ul li.has-dd>a{display:inline-flex;align-items:center;gap:6px}
+  .nav ul li.has-dd>a .chev{width:11px;height:11px;fill:currentColor;opacity:.55;transition:transform .3s,opacity .2s}
+  .nav ul li.has-dd:hover>a .chev,.nav ul li.has-dd:focus-within>a .chev{transform:rotate(180deg);opacity:1}
+  .dd{position:absolute;top:100%;left:-14px;padding-top:16px;min-width:264px;
+    opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;
+    transition:opacity .28s cubic-bezier(.2,.7,.2,1),transform .28s cubic-bezier(.2,.7,.2,1),visibility .28s}
+  .nav ul li.has-dd:hover .dd,.nav ul li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .dd-inner{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;
+    box-shadow:0 22px 48px rgba(20,16,10,.14);display:flex;flex-direction:column}
+  .dd-inner a{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:11px 16px;border-radius:11px;
+    font-size:14.5px;font-weight:500;color:#1a1a1a!important;opacity:1!important;white-space:nowrap;transition:background .2s,color .2s}
+  .dd-inner a:hover{background:var(--offwhite);color:var(--orange)!important}
+  .dd-inner a .ar{width:15px;height:15px;fill:currentColor;flex:none;opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+  .dd-inner a:hover .ar{opacity:1;transform:none}
+  .mobile-menu .mm-sub{font-size:clamp(15px,4.6vw,20px);font-weight:600;letter-spacing:0;text-transform:none;
+    color:var(--grey);padding:9px 0 9px 18px;border-bottom:1px solid var(--line)}
+  .mobile-menu .mm-sub:hover{color:var(--orange)}
+  /* active nav highlight */
+  .nav ul a.nav-active{color:var(--orange)!important;opacity:1!important}
+  header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
+  .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
+  .mobile-menu a.nav-active{color:var(--orange)!important}
 </style>
 <style>
   /* mobile navigation */
   .burger{display:none}
   .mobile-menu{position:fixed;inset:0;z-index:300;background:var(--offwhite);
-    display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 clamp(24px,7vw,64px);
+    display:flex;flex-direction:column;justify-content:flex-start;gap:2px;padding:clamp(96px,14vh,130px) clamp(24px,7vw,64px) 40px;overflow-y:auto;
     transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
   .mobile-menu a{font-size:clamp(30px,8.5vw,48px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
     color:#0c0c0c;text-decoration:none;padding:11px 0;border-bottom:1px solid var(--line);transition:color .2s}
@@ -448,23 +472,29 @@
     </a>
     <ul>
       <li><a href="#top">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/contact">Contact us</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dd"><a href="services.html">Services <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg></a><div class="dd"><div class="dd-inner"><a href="service-videography.html">Videography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-photography.html">Photography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-aerial-drone.html">Aerial &amp; Drone<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-social-media-management.html">Social Media Management<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-podcasting.html">Podcasting<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-content-creation.html">Content Creation<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div></div></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact us</a></li>
     </ul>
-    <a href="/contact" class="cta">Get in touch
+    <a href="contact.html" class="cta">Get in touch
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/services">Services</a>
-  <a href="/projects">Projects</a>
-  <a href="/contact">Contact us</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a class="mm-sub" href="service-videography.html">Videography</a>
+  <a class="mm-sub" href="service-photography.html">Photography</a>
+  <a class="mm-sub" href="service-aerial-drone.html">Aerial &amp; Drone</a>
+  <a class="mm-sub" href="service-social-media-management.html">Social Media Management</a>
+  <a class="mm-sub" href="service-podcasting.html">Podcasting</a>
+  <a class="mm-sub" href="service-content-creation.html">Content Creation</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact us</a>
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
 
@@ -512,32 +542,32 @@
     </div>
 
     <div class="svc-rows rv">
-      <a class="svc-row" href="/services#videography">
+      <a class="svc-row" href="services.html#videography">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg></span>
         <span class="nm"><b>Videography</b><span>Cinematic films, progress series, interviews &amp; commercials.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
       </a>
-      <a class="svc-row" href="/services#photography">
+      <a class="svc-row" href="services.html#photography">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M9 3l-1.8 2H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-3.2L15 3H9zm3 5a5 5 0 110 10 5 5 0 010-10z"/></svg></span>
         <span class="nm"><b>Photography</b><span>Editorial site, product &amp; corporate stills, plus drone.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
       </a>
-      <a class="svc-row" href="/services#social-media">
+      <a class="svc-row" href="services.html#social-media">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
         <span class="nm"><b>Social Media Management</b><span>Captions, posting, community management &amp; reporting.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
       </a>
-      <a class="svc-row" href="/services#podcasting">
+      <a class="svc-row" href="services.html#podcasting">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.9V21h2v-3.1A7 7 0 0019 11h-2z"/></svg></span>
         <span class="nm"><b>Podcasting</b><span>Multi-cam podcast capture, editing &amp; short-form cutdowns.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
       </a>
-      <a class="svc-row" href="/services#content-creation">
+      <a class="svc-row" href="services.html#content-creation">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17.2V21h3.8L17.8 10 14 6.2 3 17.2zM20.7 7a1 1 0 000-1.4l-2.3-2.3a1 1 0 00-1.4 0l-1.8 1.8L18.9 8.8 20.7 7z"/></svg></span>
         <span class="nm"><b>Content Creation</b><span>Short-form reels, campaign content &amp; ongoing creative.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
       </a>
-      <a class="svc-row" href="/services#aerial-drone">
+      <a class="svc-row" href="services.html#aerial-drone">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3M3 5a2 2 0 100 4 2 2 0 000-4zm18 0a2 2 0 100 4 2 2 0 000-4zM3 15a2 2 0 100 4 2 2 0 000-4zm18 0a2 2 0 100 4 2 2 0 000-4zM10 10h4v4h-4z"/></svg></span>
         <span class="nm"><b>Aerial &amp; Drone</b><span>Aerial cinematography &amp; FPV drone for sites and scale.</span></span>
         <span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
@@ -616,61 +646,61 @@
   <!-- Client logos live in /logos. Each row's set is duplicated for a seamless loop. -->
   <div class="logo-row">
     <div class="logo-track">
-      <img class="logo-img big" src="logos/delta-group.png" alt="Delta Group">
-      <img class="logo-img" src="logos/evans.webp" alt="Evans">
-      <img class="logo-img" src="logos/oreana.png" alt="Oreana">
-      <img class="logo-img" src="logos/qest.webp" alt="Qest Infrastructure">
-      <img class="logo-img" src="logos/my-robes.png" alt="My Robes">
-      <img class="logo-img" src="logos/browns-piling.svg" alt="Browns Piling">
-      <img class="logo-img" src="logos/skipz.png" alt="Skipz Recycling">
-      <img class="logo-img" src="logos/varcon.png" alt="Varcon Group">
-      <img class="logo-img" src="logos/profec.webp" alt="Profec">
-      <img class="logo-img" src="logos/liam-co.png" alt="Liam &amp; Co">
-      <img class="logo-img med" src="logos/kover.png" alt="Kover Construction">
-      <img class="logo-img" src="logos/kappacon.png" alt="kappaCON">
-      <img class="logo-img tall" src="logos/yuniq.png" alt="Yuniq Homes &amp; Developments">
-      <img class="logo-img big" src="logos/delta-group.png" alt="Delta Group">
-      <img class="logo-img" src="logos/evans.webp" alt="Evans">
-      <img class="logo-img" src="logos/oreana.png" alt="Oreana">
-      <img class="logo-img" src="logos/qest.webp" alt="Qest Infrastructure">
-      <img class="logo-img" src="logos/my-robes.png" alt="My Robes">
-      <img class="logo-img" src="logos/browns-piling.svg" alt="Browns Piling">
-      <img class="logo-img" src="logos/skipz.png" alt="Skipz Recycling">
-      <img class="logo-img" src="logos/varcon.png" alt="Varcon Group">
-      <img class="logo-img" src="logos/profec.webp" alt="Profec">
-      <img class="logo-img" src="logos/liam-co.png" alt="Liam &amp; Co">
-      <img class="logo-img med" src="logos/kover.png" alt="Kover Construction">
-      <img class="logo-img" src="logos/kappacon.png" alt="kappaCON">
-      <img class="logo-img tall" src="logos/yuniq.png" alt="Yuniq Homes &amp; Developments">
+      <img loading="lazy" class="logo-img big" src="logos/delta-group.png" alt="Delta Group">
+      <img loading="lazy" class="logo-img" src="logos/evans.webp" alt="Evans">
+      <img loading="lazy" class="logo-img" src="logos/oreana.png" alt="Oreana">
+      <img loading="lazy" class="logo-img" src="logos/qest.webp" alt="Qest Infrastructure">
+      <img loading="lazy" class="logo-img" src="logos/my-robes.png" alt="My Robes">
+      <img loading="lazy" class="logo-img" src="logos/browns-piling.svg" alt="Browns Piling">
+      <img loading="lazy" class="logo-img" src="logos/skipz.png" alt="Skipz Recycling">
+      <img loading="lazy" class="logo-img" src="logos/varcon.png" alt="Varcon Group">
+      <img loading="lazy" class="logo-img" src="logos/profec.webp" alt="Profec">
+      <img loading="lazy" class="logo-img" src="logos/liam-co.png" alt="Liam &amp; Co">
+      <img loading="lazy" class="logo-img med" src="logos/kover.png" alt="Kover Construction">
+      <img loading="lazy" class="logo-img" src="logos/kappacon.png" alt="kappaCON">
+      <img loading="lazy" class="logo-img tall" src="logos/yuniq.png" alt="Yuniq Homes &amp; Developments">
+      <img loading="lazy" class="logo-img big" src="logos/delta-group.png" alt="Delta Group">
+      <img loading="lazy" class="logo-img" src="logos/evans.webp" alt="Evans">
+      <img loading="lazy" class="logo-img" src="logos/oreana.png" alt="Oreana">
+      <img loading="lazy" class="logo-img" src="logos/qest.webp" alt="Qest Infrastructure">
+      <img loading="lazy" class="logo-img" src="logos/my-robes.png" alt="My Robes">
+      <img loading="lazy" class="logo-img" src="logos/browns-piling.svg" alt="Browns Piling">
+      <img loading="lazy" class="logo-img" src="logos/skipz.png" alt="Skipz Recycling">
+      <img loading="lazy" class="logo-img" src="logos/varcon.png" alt="Varcon Group">
+      <img loading="lazy" class="logo-img" src="logos/profec.webp" alt="Profec">
+      <img loading="lazy" class="logo-img" src="logos/liam-co.png" alt="Liam &amp; Co">
+      <img loading="lazy" class="logo-img med" src="logos/kover.png" alt="Kover Construction">
+      <img loading="lazy" class="logo-img" src="logos/kappacon.png" alt="kappaCON">
+      <img loading="lazy" class="logo-img tall" src="logos/yuniq.png" alt="Yuniq Homes &amp; Developments">
     </div>
   </div>
 
   <div class="logo-row rv">
     <div class="logo-track rtl">
-      <img class="logo-img" src="logos/whelan.png" alt="Whelan The Wrecker">
-      <img class="logo-img" src="logos/dundee-rock.png" alt="Dundee Rock">
-      <img class="logo-img tall" src="logos/ray-white.png" alt="Ray White">
-      <img class="logo-img" src="logos/vpd.png" alt="VPD Construction">
-      <img class="logo-img" src="logos/delta-recycling.svg" alt="Delta Recycling">
-      <img class="logo-img" src="logos/cma.svg" alt="CMA Contracting">
-      <img class="logo-img tall" src="logos/widi-ngaruwa.png" alt="Widi Ngaruwa Aboriginal Contractors">
-      <img class="logo-img" src="logos/delta-rent.svg" alt="Delta Rent">
-      <img class="logo-img" src="logos/muv.png" alt="MUV">
-      <img class="logo-img" src="logos/downer.svg" alt="Downer">
-      <img class="logo-img" src="logos/brc-piling-white.png" alt="BRC Piling &amp; Foundation">
-      <img class="logo-img tall" src="logos/jag-sq.png" alt="JAG SQ Developments">
-      <img class="logo-img" src="logos/whelan.png" alt="Whelan The Wrecker">
-      <img class="logo-img" src="logos/dundee-rock.png" alt="Dundee Rock">
-      <img class="logo-img tall" src="logos/ray-white.png" alt="Ray White">
-      <img class="logo-img" src="logos/vpd.png" alt="VPD Construction">
-      <img class="logo-img" src="logos/delta-recycling.svg" alt="Delta Recycling">
-      <img class="logo-img" src="logos/cma.svg" alt="CMA Contracting">
-      <img class="logo-img tall" src="logos/widi-ngaruwa.png" alt="Widi Ngaruwa Aboriginal Contractors">
-      <img class="logo-img" src="logos/delta-rent.svg" alt="Delta Rent">
-      <img class="logo-img" src="logos/muv.png" alt="MUV">
-      <img class="logo-img" src="logos/downer.svg" alt="Downer">
-      <img class="logo-img" src="logos/brc-piling-white.png" alt="BRC Piling &amp; Foundation">
-      <img class="logo-img tall" src="logos/jag-sq.png" alt="JAG SQ Developments">
+      <img loading="lazy" class="logo-img" src="logos/whelan.png" alt="Whelan The Wrecker">
+      <img loading="lazy" class="logo-img" src="logos/dundee-rock.png" alt="Dundee Rock">
+      <img loading="lazy" class="logo-img tall" src="logos/ray-white.png" alt="Ray White">
+      <img loading="lazy" class="logo-img" src="logos/vpd.png" alt="VPD Construction">
+      <img loading="lazy" class="logo-img" src="logos/delta-recycling.svg" alt="Delta Recycling">
+      <img loading="lazy" class="logo-img" src="logos/cma.svg" alt="CMA Contracting">
+      <img loading="lazy" class="logo-img tall" src="logos/widi-ngaruwa.png" alt="Widi Ngaruwa Aboriginal Contractors">
+      <img loading="lazy" class="logo-img" src="logos/delta-rent.svg" alt="Delta Rent">
+      <img loading="lazy" class="logo-img" src="logos/muv.png" alt="MUV">
+      <img loading="lazy" class="logo-img" src="logos/downer.svg" alt="Downer">
+      <img loading="lazy" class="logo-img" src="logos/brc-piling-white.png" alt="BRC Piling &amp; Foundation">
+      <img loading="lazy" class="logo-img tall" src="logos/jag-sq.png" alt="JAG SQ Developments">
+      <img loading="lazy" class="logo-img" src="logos/whelan.png" alt="Whelan The Wrecker">
+      <img loading="lazy" class="logo-img" src="logos/dundee-rock.png" alt="Dundee Rock">
+      <img loading="lazy" class="logo-img tall" src="logos/ray-white.png" alt="Ray White">
+      <img loading="lazy" class="logo-img" src="logos/vpd.png" alt="VPD Construction">
+      <img loading="lazy" class="logo-img" src="logos/delta-recycling.svg" alt="Delta Recycling">
+      <img loading="lazy" class="logo-img" src="logos/cma.svg" alt="CMA Contracting">
+      <img loading="lazy" class="logo-img tall" src="logos/widi-ngaruwa.png" alt="Widi Ngaruwa Aboriginal Contractors">
+      <img loading="lazy" class="logo-img" src="logos/delta-rent.svg" alt="Delta Rent">
+      <img loading="lazy" class="logo-img" src="logos/muv.png" alt="MUV">
+      <img loading="lazy" class="logo-img" src="logos/downer.svg" alt="Downer">
+      <img loading="lazy" class="logo-img" src="logos/brc-piling-white.png" alt="BRC Piling &amp; Foundation">
+      <img loading="lazy" class="logo-img tall" src="logos/jag-sq.png" alt="JAG SQ Developments">
     </div>
   </div>
   </div>
@@ -685,62 +715,62 @@
       <span class="mono idx">06 — Selected work</span>
     </div>
 
-    <!-- Each .proj is one project. Swap the <img src> and text for real work.
+    <!-- Each .proj is one project. Swap the <img loading="lazy" src> and text for real work.
          Rows auto-alternate image left / right. -->
     <div class="proj-list">
       <article class="proj rv">
-        <a class="proj-media" href="/project-clayton-business-park">
+        <a class="proj-media" href="project-clayton-business-park.html">
           <span class="yr">2026</span>
-          <img src="clayton-hero.jpg" alt="Clayton Business Park demolition">
+          <img loading="lazy" src="clayton-hero.jpg" alt="Clayton Business Park demolition">
         </a>
         <div class="proj-info">
           <span class="pnum">Project 01</span>
-          <h3><a href="/project-clayton-business-park">Clayton Business Park</a></h3>
+          <h3><a href="project-clayton-business-park.html">Clayton Business Park</a></h3>
           <div class="meta"><span>Demolition Film</span><span>Clayton, VIC</span><span>Delta Group</span></div>
           <p>Video, drone and photography capturing the controlled demolition of a 27-metre, 3,200-tonne High Bay Press Hall — one of Delta Group's major industrial milestones.</p>
-          <a href="/project-clayton-business-park" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
+          <a href="project-clayton-business-park.html" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
         </div>
       </article>
 
       <article class="proj rv">
-        <a class="proj-media" href="/project-hume-anglican-grammar">
+        <a class="proj-media" href="project-hume-anglican-grammar.html">
           <span class="yr">2026</span>
-          <img src="hume-card.jpg" alt="Hume Anglican Grammar roofing works aerial">
+          <img loading="lazy" src="hume-card.jpg" alt="Hume Anglican Grammar roofing works aerial">
         </a>
         <div class="proj-info">
           <span class="pnum">Project 02</span>
-          <h3><a href="/project-hume-anglican-grammar">Hume Anglican Grammar</a></h3>
+          <h3><a href="project-hume-anglican-grammar.html">Hume Anglican Grammar</a></h3>
           <div class="meta"><span>Education · Roofing</span><span>Mickleham, VIC</span><span>Profect1 Group</span></div>
           <p>Video, photography, drone content and reels for Profect1 Group — capturing the roofing works, site progress and major roofing systems across the school development.</p>
-          <a href="/project-hume-anglican-grammar" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
+          <a href="project-hume-anglican-grammar.html" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
         </div>
       </article>
 
       <article class="proj rv">
-        <a class="proj-media" href="/project-graduate-engineer-documentary">
+        <a class="proj-media" href="project-graduate-engineer-documentary.html">
           <span class="yr">2026</span>
-          <img src="grad-hero.jpg" alt="Delta Group graduate engineer documentary">
+          <img loading="lazy" src="grad-hero.jpg" alt="Delta Group graduate engineer documentary">
         </a>
         <div class="proj-info">
           <span class="pnum">Project 03</span>
-          <h3><a href="/project-graduate-engineer-documentary">Graduate Engineer Documentary</a></h3>
+          <h3><a href="project-graduate-engineer-documentary.html">Graduate Engineer Documentary</a></h3>
           <div class="meta"><span>Corporate Documentary</span><span>Melbourne, VIC</span><span>Delta Group</span></div>
           <p>A cinematic graduate engineer documentary for Delta Group — the Engineering Academy, graduate pathways and the culture behind a leading demolition and infrastructure business.</p>
-          <a href="/project-graduate-engineer-documentary" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
+          <a href="project-graduate-engineer-documentary.html" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
         </div>
       </article>
 
       <article class="proj rv">
-        <a class="proj-media" href="/project-ray-white-acreage">
+        <a class="proj-media" href="project-ray-white-acreage.html">
           <span class="yr">2025</span>
-          <img src="raywhite-hero.jpg" alt="Ray White acreage property tour">
+          <img loading="lazy" src="raywhite-hero.jpg" alt="Ray White acreage property tour">
         </a>
         <div class="proj-info">
           <span class="pnum">Project 04</span>
-          <h3><a href="/project-ray-white-acreage">Ray White Acreage</a></h3>
+          <h3><a href="project-ray-white-acreage.html">Ray White Acreage</a></h3>
           <div class="meta"><span>Real Estate Tour</span><span>Victoria</span><span>$22.5M Sale</span></div>
           <p>A cinematic acreage property tour — drone, ground video and a full walkthrough for a luxury rural estate that sold for $22.5 million.</p>
-          <a href="/project-ray-white-acreage" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
+          <a href="project-ray-white-acreage.html" class="view">View project <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a>
         </div>
       </article>
     </div>
@@ -751,7 +781,7 @@
 <section class="contact pad" id="contact">
   <div class="wrap">
     <div class="contact-panel rv">
-      <img class="c-bg" src="contact-photo.jpg" alt="Strum Media filming a worker on a Melbourne site">
+      <img loading="lazy" class="c-bg" src="contact-photo.jpg" alt="Strum Media filming a worker on a Melbourne site">
       <div class="c-ov"></div>
       <div class="c-left">
         <span class="c-eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>Contact</span>
@@ -783,10 +813,10 @@
       <div class="f-col">
         <h4>Quick Links</h4>
         <a href="#top">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="f-col">
         <h4>Socials</h4>
@@ -803,8 +833,8 @@
     <div class="f-bottom">
       <span>© 2026 Strum Media · ABN 15 681 384 458 · All rights reserved.</span>
       <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
@@ -920,5 +950,13 @@
 })();
 </script>
 
+<script>
+(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
+var sec=cur;
+if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
+else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+</script>
 </body>
 </html>

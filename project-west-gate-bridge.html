@@ -21,11 +21,13 @@
 <meta property="og:title" content="West Gate Bridge Membrane Removal Video | Strum Media">
 <meta property="og:description" content="An infrastructure video by Strum Media documenting membrane removal works on the West Gate Bridge — aerial and on-site footage captured across the project.">
 <meta property="og:url" content="https://www.strummedia.com.au/project-west-gate-bridge">
-<meta property="og:image" content="https://www.strummedia.com.au/westgate-1.jpg">
+<meta property="og:image" content="https://www.strummedia.com.au/og-project-west-gate-bridge.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="West Gate Bridge Membrane Removal Video | Strum Media">
 <meta name="twitter:description" content="An infrastructure video by Strum Media documenting membrane removal works on the West Gate Bridge — aerial and on-site footage captured across the project.">
-<meta name="twitter:image" content="https://www.strummedia.com.au/westgate-1.jpg">
+<meta name="twitter:image" content="https://www.strummedia.com.au/og-project-west-gate-bridge.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -434,12 +436,57 @@
   @media(max-width:820px){.cs-grid{grid-template-columns:1fr;gap:30px}.cs-stats{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:560px){.cs-stats{grid-template-columns:repeat(2,1fr)}.cs-gallery{grid-template-columns:1fr}}
 
+  /* ---------- case-study upgrades: links, related, faq ---------- */
+  .cs-meta .v a{color:#0c0c0c;border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
+  .cs-meta .v a:hover{color:var(--orange);border-color:var(--orange)}
+  .cs-related{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:clamp(30px,5vh,50px)}
+  .cs-related .rf{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--beige)}
+  .cs-related .rf img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.04);transition:filter .5s,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .cs-related a:hover .rf img{filter:grayscale(0) contrast(1.04);transform:scale(1.05)}
+  .cs-related .rt{margin-top:14px;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:#0c0c0c;display:flex;align-items:center;gap:8px;transition:color .25s}
+  .cs-related a:hover .rt{color:var(--orange)}
+  @media(max-width:720px){.cs-related{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.cs-related{grid-template-columns:1fr}}
+  .faq{max-width:900px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq details:first-child{border-top:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:clamp(18px,2.6vh,26px) 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:clamp(16px,1.8vw,20px);font-weight:700;letter-spacing:-.01em;color:#0c0c0c;line-height:1.25}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pl{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .3s}
+  .faq summary .pl svg{width:13px;height:13px;fill:#0c0c0c;transition:fill .25s}
+  .faq details[open] summary .pl{background:var(--orange);border-color:var(--orange);transform:rotate(45deg)}
+  .faq details[open] summary .pl svg{fill:#fff}
+  .faq .ans{padding:0 0 clamp(20px,2.8vh,28px);font-size:15.5px;line-height:1.66;color:var(--grey);max-width:70ch}
+  /* ---------- services dropdown (desktop) ---------- */
+  .nav ul li.has-dd{position:relative}
+  .nav ul li.has-dd>a{display:inline-flex;align-items:center;gap:6px}
+  .nav ul li.has-dd>a .chev{width:11px;height:11px;fill:currentColor;opacity:.55;transition:transform .3s,opacity .2s}
+  .nav ul li.has-dd:hover>a .chev,.nav ul li.has-dd:focus-within>a .chev{transform:rotate(180deg);opacity:1}
+  .dd{position:absolute;top:100%;left:-14px;padding-top:16px;min-width:264px;
+    opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;
+    transition:opacity .28s cubic-bezier(.2,.7,.2,1),transform .28s cubic-bezier(.2,.7,.2,1),visibility .28s}
+  .nav ul li.has-dd:hover .dd,.nav ul li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .dd-inner{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;
+    box-shadow:0 22px 48px rgba(20,16,10,.14);display:flex;flex-direction:column}
+  .dd-inner a{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:11px 16px;border-radius:11px;
+    font-size:14.5px;font-weight:500;color:#1a1a1a!important;opacity:1!important;white-space:nowrap;transition:background .2s,color .2s}
+  .dd-inner a:hover{background:var(--offwhite);color:var(--orange)!important}
+  .dd-inner a .ar{width:15px;height:15px;fill:currentColor;flex:none;opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+  .dd-inner a:hover .ar{opacity:1;transform:none}
+  .mobile-menu .mm-sub{font-size:clamp(15px,4.6vw,20px);font-weight:600;letter-spacing:0;text-transform:none;
+    color:var(--grey);padding:9px 0 9px 18px;border-bottom:1px solid var(--line)}
+  .mobile-menu .mm-sub:hover{color:var(--orange)}
+  /* active nav highlight */
+  .nav ul a.nav-active{color:var(--orange)!important;opacity:1!important}
+  header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
+  .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
+  .mobile-menu a.nav-active{color:var(--orange)!important}
 </style>
 <style>
   /* mobile navigation */
   .burger{display:none}
   .mobile-menu{position:fixed;inset:0;z-index:300;background:var(--offwhite);
-    display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 clamp(24px,7vw,64px);
+    display:flex;flex-direction:column;justify-content:flex-start;gap:2px;padding:clamp(96px,14vh,130px) clamp(24px,7vw,64px) 40px;overflow-y:auto;
     transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
   .mobile-menu a{font-size:clamp(30px,8.5vw,48px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
     color:#0c0c0c;text-decoration:none;padding:11px 0;border-bottom:1px solid var(--line);transition:color .2s}
@@ -479,6 +526,39 @@
       }
     },
     {
+      "@type": "CreativeWork",
+      "@id": "https://www.strummedia.com.au/project-west-gate-bridge#project",
+      "name": "West Gate Bridge",
+      "url": "https://www.strummedia.com.au/project-west-gate-bridge",
+      "description": "An infrastructure video by Strum Media documenting membrane removal works on the West Gate Bridge — aerial and on-site footage captured across the project.",
+      "creator": {
+        "@type": "Organization",
+        "@id": "https://www.strummedia.com.au/#organization"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "QEST Infrastructure"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "West Gate Bridge, Melbourne",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "West Gate Bridge",
+          "addressRegion": "Melbourne",
+          "addressCountry": "AU"
+        }
+      },
+      "dateCreated": "2026",
+      "keywords": "Video, Photo, Drone, West Gate Bridge, Melbourne, QEST Infrastructure, West Gate Bridge",
+      "image": [
+        "https://www.strummedia.com.au/westgate-1.jpg",
+        "https://www.strummedia.com.au/westgate-gal-1.jpg",
+        "https://www.strummedia.com.au/westgate-gal-2.jpg",
+        "https://www.strummedia.com.au/westgate-gal-3.jpg"
+      ]
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -500,6 +580,35 @@
           "item": "https://www.strummedia.com.au/project-west-gate-bridge"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is this project located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This West Gate Bridge project was captured in West Gate Bridge, Melbourne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What did Strum Media produce for this project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Strum Media provided video, photo and drone for this project — captured on location and delivered for marketing, social media and website use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who was this project for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This project was produced for QEST Infrastructure."
+          }
+        }
+      ]
     }
   ]
 }
@@ -509,28 +618,34 @@
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="/" class="mark" aria-label="Strum Media">
+    <a href="index.html" class="mark" aria-label="Strum Media">
       <svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg>
     </a>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/contact">Contact us</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dd"><a href="services.html">Services <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg></a><div class="dd"><div class="dd-inner"><a href="service-videography.html">Videography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-photography.html">Photography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-aerial-drone.html">Aerial &amp; Drone<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-social-media-management.html">Social Media Management<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-podcasting.html">Podcasting<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-content-creation.html">Content Creation<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div></div></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact us</a></li>
     </ul>
-    <a href="/contact" class="cta">Get in touch
+    <a href="contact.html" class="cta">Get in touch
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/services">Services</a>
-  <a href="/projects">Projects</a>
-  <a href="/contact">Contact us</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a class="mm-sub" href="service-videography.html">Videography</a>
+  <a class="mm-sub" href="service-photography.html">Photography</a>
+  <a class="mm-sub" href="service-aerial-drone.html">Aerial &amp; Drone</a>
+  <a class="mm-sub" href="service-social-media-management.html">Social Media Management</a>
+  <a class="mm-sub" href="service-podcasting.html">Podcasting</a>
+  <a class="mm-sub" href="service-content-creation.html">Content Creation</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact us</a>
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
 
@@ -538,7 +653,7 @@
 <!-- CASE STUDY HERO -->
 <section class="page-hero cs-hero">
   <div class="wrap rv">
-    <a class="cs-back" href="/projects"><span class="a">&larr;</span> All projects</a>
+    <a class="cs-back" href="projects.html"><span class="a">&larr;</span> All projects</a>
     <span class="page-eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>Project &middot; QEST Infrastructure</span>
     <h1><em>West Gate</em> Bridge</h1>
     <p class="lead">One of Melbourne's most technically demanding infrastructure jobs — captured for QEST Infrastructure.</p>
@@ -559,8 +674,9 @@
       <aside class="cs-meta">
         <div><span class="k">Client</span><span class="v">QEST Infrastructure</span></div>
         <div><span class="k">Location</span><span class="v">West Gate Bridge, Melbourne</span></div>
+        <div><span class="k">Industry</span><span class="v"><a href="infrastructure-media.html">Infrastructure</a></span></div>
         <div><span class="k">Scope</span><span class="v">1 km membrane removal</span></div>
-        <div><span class="k">Services</span><span class="v">Video · Photo · Drone</span></div>
+        <div><span class="k">Services</span><span class="v"><a href="service-videography.html">Video</a> &middot; <a href="service-photography.html">Photo</a> &middot; <a href="service-aerial-drone.html">Drone</a></span></div>
         <div><span class="k">Year</span><span class="v">2026</span></div>
       </aside>
       <div class="cs-body">
@@ -581,17 +697,41 @@
       <p>Selected stills from the West Gate Bridge membrane removal.</p>
     </div>
     <div class="cs-gallery rv">
-      <figure><img src="westgate-gal-1.jpg" alt="QEST crew on the West Gate Bridge"></figure>
-      <figure><img src="westgate-gal-2.jpg" alt="QEST crew on the West Gate Bridge"></figure>
-      <figure class="wide"><img src="westgate-gal-3.jpg" alt="QEST worker with industrial vacuum on the West Gate Bridge"></figure>
+      <figure><img loading="lazy" src="westgate-gal-1.jpg" alt="QEST crew on the West Gate Bridge"></figure>
+      <figure><img loading="lazy" src="westgate-gal-2.jpg" alt="QEST crew on the West Gate Bridge"></figure>
+      <figure class="wide"><img loading="lazy" src="westgate-gal-3.jpg" alt="QEST worker with industrial vacuum on the West Gate Bridge"></figure>
     </div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW / FAQ -->
+<section class="pad" style="background:var(--offwhite)">
+  <div class="wrap">
+    <div class="cs-galhead rv"><h2>Good to know<span style="color:var(--orange)">.</span></h2></div>
+    <div class="faq rv" style="margin-top:clamp(26px,4vh,44px)">
+      <details><summary>Where is this project located?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">This West Gate Bridge project was captured in West Gate Bridge, Melbourne.</div></details>
+      <details><summary>What did Strum Media produce for this project?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Strum Media provided video, photo and drone for this project — captured on location and delivered for marketing, social media and website use.</div></details>
+      <details><summary>Who was this project for?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">This project was produced for QEST Infrastructure.</div></details>
+      </div>
+  </div>
+</section>
+
+<!-- MORE WORK -->
+<section class="pad" style="background:#fff">
+  <div class="wrap">
+    <div class="cs-galhead rv"><h2>More work<span style="color:var(--orange)">.</span></h2></div>
+    <div class="cs-related rv">
+      <a href="project-clayton-business-park.html"><div class="rf"><img loading="lazy" src="clayton-card.jpg" alt="Clayton Business Park"></div><div class="rt">Clayton Business Park <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z" fill="currentColor"/></svg></div></a>
+      <a href="project-graduate-engineer-documentary.html"><div class="rf"><img loading="lazy" src="grad-card.jpg" alt="Graduate Engineer"></div><div class="rt">Graduate Engineer <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z" fill="currentColor"/></svg></div></a>
+      <a href="project-hume-anglican-grammar.html"><div class="rf"><img loading="lazy" src="hume-card.jpg" alt="Hume Anglican Grammar"></div><div class="rt">Hume Anglican Grammar <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z" fill="currentColor"/></svg></div></a>
+      </div>
   </div>
 </section>
 
 <!-- Back to all projects -->
 <section class="cs-backwrap">
   <div class="wrap rv">
-    <a class="cs-back" href="/projects"><span class="a">&larr;</span> Back to all projects</a>
+    <a class="cs-back" href="projects.html"><span class="a">&larr;</span> Back to all projects</a>
   </div>
 </section>
 
@@ -601,7 +741,7 @@
   <div class="wrap rv">
     <h2>Your project<br>next.</h2>
     <p>Got a build or a brand worth showing off? Let's document it properly.</p>
-    <a class="btn" href="/contact">Start a project
+    <a class="btn" href="contact.html">Start a project
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
   </div>
@@ -611,16 +751,16 @@
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a href="/" class="logo">Strum<span>.</span></a>
+        <a href="index.html" class="logo">Strum<span>.</span></a>
         <p>Melbourne-based media production &amp; social media management. Video, photography and drone content that makes construction and property work look as important as it is.</p>
       </div>
       <div class="f-col">
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="f-col">
         <h4>Socials</h4>
@@ -637,8 +777,8 @@
     <div class="f-bottom">
       <span>© 2026 Strum Media · ABN 15 681 384 458 · All rights reserved.</span>
       <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
@@ -681,5 +821,13 @@
 })();
 </script>
 
+<script>
+(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
+var sec=cur;
+if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
+else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+</script>
 </body>
 </html>

@@ -12,20 +12,22 @@
 
   gtag('config', 'G-L6NXGCSZXF');
 </script>
-<title>Our Work — Construction &amp; Property Video Projects | Strum Media</title>
+<title>Our Work | Construction &amp; Property Video | Strum Media</title>
 <link rel="canonical" href="https://www.strummedia.com.au/projects">
 <meta name="description" content="Explore Strum Media's construction, demolition, property and corporate video projects across Melbourne and Australia — drone, documentary and commercial work.">
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Strum Media">
-<meta property="og:title" content="Our Work — Construction &amp; Property Video Projects | Strum Media">
+<meta property="og:title" content="Our Work | Construction &amp; Property Video | Strum Media">
 <meta property="og:description" content="Explore Strum Media's construction, demolition, property and corporate video projects across Melbourne and Australia — drone, documentary and commercial work.">
 <meta property="og:url" content="https://www.strummedia.com.au/projects">
-<meta property="og:image" content="https://www.strummedia.com.au/clayton-card.jpg">
+<meta property="og:image" content="https://www.strummedia.com.au/og-projects.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Our Work — Construction &amp; Property Video Projects | Strum Media">
+<meta name="twitter:title" content="Our Work | Construction &amp; Property Video | Strum Media">
 <meta name="twitter:description" content="Explore Strum Media's construction, demolition, property and corporate video projects across Melbourne and Australia — drone, documentary and commercial work.">
-<meta name="twitter:image" content="https://www.strummedia.com.au/clayton-card.jpg">
+<meta name="twitter:image" content="https://www.strummedia.com.au/og-projects.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -403,12 +405,36 @@
   .pj-card.pj-soon h3{color:#9a958c}
   .pj-card.pj-soon:hover h3{color:var(--orange)}
   @media(max-width:760px){.pj-grid{grid-template-columns:1fr;gap:48px}}
+  /* ---------- services dropdown (desktop) ---------- */
+  .nav ul li.has-dd{position:relative}
+  .nav ul li.has-dd>a{display:inline-flex;align-items:center;gap:6px}
+  .nav ul li.has-dd>a .chev{width:11px;height:11px;fill:currentColor;opacity:.55;transition:transform .3s,opacity .2s}
+  .nav ul li.has-dd:hover>a .chev,.nav ul li.has-dd:focus-within>a .chev{transform:rotate(180deg);opacity:1}
+  .dd{position:absolute;top:100%;left:-14px;padding-top:16px;min-width:264px;
+    opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;
+    transition:opacity .28s cubic-bezier(.2,.7,.2,1),transform .28s cubic-bezier(.2,.7,.2,1),visibility .28s}
+  .nav ul li.has-dd:hover .dd,.nav ul li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .dd-inner{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;
+    box-shadow:0 22px 48px rgba(20,16,10,.14);display:flex;flex-direction:column}
+  .dd-inner a{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:11px 16px;border-radius:11px;
+    font-size:14.5px;font-weight:500;color:#1a1a1a!important;opacity:1!important;white-space:nowrap;transition:background .2s,color .2s}
+  .dd-inner a:hover{background:var(--offwhite);color:var(--orange)!important}
+  .dd-inner a .ar{width:15px;height:15px;fill:currentColor;flex:none;opacity:0;transform:translateX(-5px);transition:opacity .2s,transform .2s}
+  .dd-inner a:hover .ar{opacity:1;transform:none}
+  .mobile-menu .mm-sub{font-size:clamp(15px,4.6vw,20px);font-weight:600;letter-spacing:0;text-transform:none;
+    color:var(--grey);padding:9px 0 9px 18px;border-bottom:1px solid var(--line)}
+  .mobile-menu .mm-sub:hover{color:var(--orange)}
+  /* active nav highlight */
+  .nav ul a.nav-active{color:var(--orange)!important;opacity:1!important}
+  header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
+  .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
+  .mobile-menu a.nav-active{color:var(--orange)!important}
 </style>
 <style>
   /* mobile navigation */
   .burger{display:none}
   .mobile-menu{position:fixed;inset:0;z-index:300;background:var(--offwhite);
-    display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 clamp(24px,7vw,64px);
+    display:flex;flex-direction:column;justify-content:flex-start;gap:2px;padding:clamp(96px,14vh,130px) clamp(24px,7vw,64px) 40px;overflow-y:auto;
     transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
   .mobile-menu a{font-size:clamp(30px,8.5vw,48px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
     color:#0c0c0c;text-decoration:none;padding:11px 0;border-bottom:1px solid var(--line);transition:color .2s}
@@ -472,28 +498,34 @@
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="/" class="mark" aria-label="Strum Media">
+    <a href="index.html" class="mark" aria-label="Strum Media">
       <svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg>
     </a>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/contact">Contact us</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dd"><a href="services.html">Services <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg></a><div class="dd"><div class="dd-inner"><a href="service-videography.html">Videography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-photography.html">Photography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-aerial-drone.html">Aerial &amp; Drone<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-social-media-management.html">Social Media Management<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-podcasting.html">Podcasting<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-content-creation.html">Content Creation<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div></div></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact us</a></li>
     </ul>
-    <a href="/contact" class="cta">Get in touch
+    <a href="contact.html" class="cta">Get in touch
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
     <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/services">Services</a>
-  <a href="/projects">Projects</a>
-  <a href="/contact">Contact us</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a class="mm-sub" href="service-videography.html">Videography</a>
+  <a class="mm-sub" href="service-photography.html">Photography</a>
+  <a class="mm-sub" href="service-aerial-drone.html">Aerial &amp; Drone</a>
+  <a class="mm-sub" href="service-social-media-management.html">Social Media Management</a>
+  <a class="mm-sub" href="service-podcasting.html">Podcasting</a>
+  <a class="mm-sub" href="service-content-creation.html">Content Creation</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact us</a>
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
 
@@ -512,7 +544,7 @@
     <!-- 8 projects. Each card: company name = big <h3>; meta = Location · Type. Edit text/images freely. -->
     <div class="pj-grid">
 
-      <a class="pj-card rv" href="/project-clayton-business-park">
+      <a class="pj-card rv" href="project-clayton-business-park.html">
         <div class="img"><span class="yr">2026</span><img src="clayton-card.jpg" alt="Clayton Business Park demolition"></div>
         <div class="meta"><span>Clayton, VIC</span><span class="d">·</span><span>Demolition Film</span></div>
         <h3>Demolition — Clayton Business Park</h3>
@@ -520,56 +552,56 @@
         <p class="pj-desc">Strum Media captured video, drone and photography for the controlled demolition of a <span class="hi">27 metre high</span>, <span class="hi">3,200 tonne</span> High Bay Press Hall at Clayton Business Park in Melbourne. The content showcased the scale, precision and safety behind one of Delta Group's major industrial demolition milestones.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-west-gate-bridge">
-        <div class="img"><span class="yr">2026</span><img src="qest-card.jpg" alt="West Gate Bridge membrane removal"></div>
+      <a class="pj-card rv" href="project-west-gate-bridge.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="qest-card.jpg" alt="West Gate Bridge membrane removal"></div>
         <div class="meta"><span>Melbourne, VIC</span><span class="d">·</span><span>Infrastructure</span></div>
         <h3>QEST — West Gate Bridge</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">The West Gate Bridge Membrane Removal project was captured for QEST Infrastructure, showcasing the removal of 1km of bridge membrane using ultra-high-pressure water blasting, robotics and industrial vacuum systems. Delivered ahead of schedule with zero QEST delays and zero incidents, it highlighted QEST's engineering precision, safety culture and infrastructure capability.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-graduate-engineer-documentary">
-        <div class="img"><span class="yr">2026</span><img src="grad-card.jpg" alt="Graduate Engineer documentary"></div>
+      <a class="pj-card rv" href="project-graduate-engineer-documentary.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="grad-card.jpg" alt="Graduate Engineer documentary"></div>
         <div class="meta"><span>Melbourne, VIC</span><span class="d">·</span><span>Corporate Documentary</span></div>
         <h3>Graduate Engineer Documentary</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">A cinematic graduate engineer documentary created for Delta Group, showcasing the Engineering Academy, graduate pathways, interview stories and the company culture behind one of Australia's leading demolition, civil and infrastructure businesses.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-hume-anglican-grammar">
-        <div class="img"><span class="yr">2026</span><img src="hume-card.jpg" alt="Hume Anglican Grammar roofing"></div>
+      <a class="pj-card rv" href="project-hume-anglican-grammar.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="hume-card.jpg" alt="Hume Anglican Grammar roofing"></div>
         <div class="meta"><span>Mickleham, VIC</span><span class="d">·</span><span>Education · Roofing</span></div>
         <h3>Hume Anglican Grammar</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">The Hume Anglican Grammar school development was captured through video, photography, drone content and Instagram reels for Profect1 Group, showcasing their roofing works, site progress and the major roofing systems installed across the education project.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-scotch-hill-gardens">
-        <div class="img"><span class="yr">2026</span><img src="scotch-card.jpg" alt="Scotch Hill Gardens demolition"></div>
+      <a class="pj-card rv" href="project-scotch-hill-gardens.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="scotch-card.jpg" alt="Scotch Hill Gardens demolition"></div>
         <div class="meta"><span>Hawthorn, VIC</span><span class="d">·</span><span>Demolition &amp; Early Works</span></div>
         <h3>Scotch Hill Gardens</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">The Scotch Hill Gardens project in Hawthorn was captured for Delta Group, showcasing complex demolition and early works for Hamton Property Group. The project involved the protection, retention and relocation of more than 70 significant trees, over 17,000 work hours and a resource recovery rate above 95%.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-kia-kilmore">
-        <div class="img"><span class="yr">2026</span><img src="kia-card.jpg" alt="Kia Kilmore dealership build"></div>
+      <a class="pj-card rv" href="project-kia-kilmore.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="kia-card.jpg" alt="Kia Kilmore dealership build"></div>
         <div class="meta"><span>Kilmore, VIC</span><span class="d">·</span><span>Commercial Construction</span></div>
         <h3>Kia Kilmore</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">The new Kia Car Dealership in Kilmore was captured through video, photography, drone and FPV drone content for Profect1 Group, showcasing the early stages, site progress and commercial construction capability behind the project alongside Ark Industrial and the wider project team.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-pascoe-vale-residence">
-        <div class="img"><span class="yr">2026</span><img src="luxhome-card.jpg" alt="Pascoe Vale luxury residence"></div>
+      <a class="pj-card rv" href="project-pascoe-vale-residence.html">
+        <div class="img"><span class="yr">2026</span><img loading="lazy" src="luxhome-card.jpg" alt="Pascoe Vale luxury residence"></div>
         <div class="meta"><span>Pascoe Vale, VIC</span><span class="d">·</span><span>Architectural Film</span></div>
         <h3>Luxury Home — Pascoe Vale</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
         <p class="pj-desc">The Pascoe Vale Residence is a luxury home build captured from start to finish, documenting excavation, basement construction, structural preparation and the completion of the suspended slab. Through cinematic video, photography, drone content and social media assets, the project showcases the precision, craftsmanship and vision behind a high-end residential development in Melbourne.</p>
       </a>
 
-      <a class="pj-card rv" href="/project-ray-white-acreage">
-        <div class="img"><span class="yr">2025</span><img src="raywhite-card.jpg" alt="Ray White acreage property tour"></div>
+      <a class="pj-card rv" href="project-ray-white-acreage.html">
+        <div class="img"><span class="yr">2025</span><img loading="lazy" src="raywhite-card.jpg" alt="Ray White acreage property tour"></div>
         <div class="meta"><span>Victoria</span><span class="d">·</span><span>Real Estate Tour</span></div>
         <h3>Ray White Acreage Property Tour</h3>
         <span class="pj-brk"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>
@@ -585,7 +617,7 @@
   <div class="wrap rv">
     <h2>Your project<br>next.</h2>
     <p>Got a build or a brand worth showing off? Let's document it properly.</p>
-    <a class="btn" href="/contact">Start a project
+    <a class="btn" href="contact.html">Start a project
       <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
     </a>
   </div>
@@ -595,16 +627,16 @@
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a href="/" class="logo">Strum<span>.</span></a>
+        <a href="index.html" class="logo">Strum<span>.</span></a>
         <p>Melbourne-based media production &amp; social media management. Video, photography and drone content that makes construction and property work look as important as it is.</p>
       </div>
       <div class="f-col">
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="f-col">
         <h4>Socials</h4>
@@ -621,8 +653,8 @@
     <div class="f-bottom">
       <span>© 2026 Strum Media · ABN 15 681 384 458 · All rights reserved.</span>
       <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
@@ -665,5 +697,13 @@
 })();
 </script>
 
+<script>
+(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
+var sec=cur;
+if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
+else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+</script>
 </body>
 </html>
