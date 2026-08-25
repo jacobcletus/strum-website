@@ -506,6 +506,27 @@
   ]
 }
 </script>
+<style>
+  .fr-read{background:var(--offwhite);padding:clamp(48px,7vh,86px) 0}
+  .fr-read .fr-head{display:flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.3em;
+    text-transform:uppercase;font-weight:600;color:#1a1a1a;margin-bottom:30px}
+  .fr-read .fr-head .star{display:inline-flex;width:16px;height:16px}
+  .fr-read .fr-head .star svg{width:100%;height:100%;fill:var(--orange);animation:spin 14s linear infinite}
+  .fr-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(14px,2vw,22px)}
+  .fr-item{display:flex;flex-direction:column;justify-content:space-between;gap:16px;background:#fff;
+    border:1px solid var(--line);border-radius:16px;padding:clamp(22px,2.6vw,28px);
+    transition:border-color .25s,transform .3s}
+  .fr-item:hover{border-color:var(--orange);transform:translateY(-4px)}
+  .fr-item .k{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:12px}
+  .fr-item h3{font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.16;
+    text-transform:uppercase;color:#0c0c0c;transition:color .25s}
+  .fr-item:hover h3{color:var(--orange)}
+  .fr-item p{margin-top:11px;font-size:13.5px;line-height:1.55;color:var(--grey)}
+  .fr-item .go{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+    letter-spacing:.04em;color:#0c0c0c;transition:gap .25s,color .25s}
+  .fr-item .go svg{width:14px;height:14px;fill:currentColor}
+  .fr-item:hover .go{gap:13px;color:var(--orange)}
+</style>
 </head>
 <body>
 
@@ -519,6 +540,7 @@
       <li><a href="about.html">About</a></li>
       <li class="has-dd"><a href="services.html">Services <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8 18 9.4z"/></svg></a><div class="dd"><div class="dd-inner"><a href="service-videography.html">Videography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-photography.html">Photography<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-aerial-drone.html">Aerial &amp; Drone<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-social-media-management.html">Social Media Management<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-podcasting.html">Podcasting<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a><a href="service-content-creation.html">Content Creation<svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div></div></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact us</a></li>
     </ul>
     <a href="contact.html" class="cta">Get in touch
@@ -538,6 +560,7 @@
   <a class="mm-sub" href="service-podcasting.html">Podcasting</a>
   <a class="mm-sub" href="service-content-creation.html">Content Creation</a>
   <a href="projects.html">Projects</a>
+  <a href="blog.html">Blog</a>
   <a href="contact.html">Contact us</a>
   <a class="mm-ig" href="https://www.instagram.com/strumedia.au/" target="_blank" rel="noopener">Instagram &#8599;</a>
 </nav>
@@ -847,6 +870,38 @@
   </div>
 </section>
 
+<section class="fr-read">
+  <div class="wrap rv">
+    <div class="fr-head"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span>Further reading</div>
+    <div class="fr-list">
+        <a class="fr-item" href="blog-construction-site-progress-video.html">
+          <div>
+            <span class="k">Construction</span>
+            <h3>Why Every Builder Should Be Filming Site Progress</h3>
+            <p>Progress footage is the one marketing asset you cannot recreate later — and how builders use it across tenders, clients and social.</p>
+          </div>
+          <span class="go">Read article <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
+        </a>
+        <a class="fr-item" href="blog-video-content-construction-companies.html">
+          <div>
+            <span class="k">Video Strategy</span>
+            <h3>5 Types of Video Content Every Construction Company Needs</h3>
+            <p>A tender needs something different to Instagram. The five video types worth having, and how one shoot day feeds all of them.</p>
+          </div>
+          <span class="go">Read article <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
+        </a>
+        <a class="fr-item" href="blog-cinematic-property-video-melbourne.html">
+          <div>
+            <span class="k">Property</span>
+            <h3>Why Cinematic Property Videos Win Buyers, Agents and Builders</h3>
+            <p>One film sells the home, markets the builder and becomes a keepsake the family shares for years — compounding into referrals.</p>
+          </div>
+          <span class="go">Read article <svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
+        </a>
+    </div>
+  </div>
+</section>
+
 <footer class="foot-v2">
   <div class="foot-hero rv">
     <img class="foot-photo" src="team-footer.webp" alt="The Strum Media team in Melbourne" loading="lazy" width="1800" height="1350">
@@ -857,6 +912,7 @@
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="foot-meta">
