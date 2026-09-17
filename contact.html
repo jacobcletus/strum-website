@@ -462,6 +462,7 @@
 <style>
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,5vw,80px);align-items:start}
   .form{display:flex;flex-direction:column;gap:18px}
+  .ghl-form-wrap{min-height:674px}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .form label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--grey);margin-bottom:9px}
   .form input,.form textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;
@@ -598,25 +599,27 @@
 <section class="pad" style="background:var(--offwhite)">
   <div class="wrap">
     <div class="contact-grid">
-      <form class="form rv" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="4e9ea194-b60b-4670-b92c-f6e23316470f">
-        <input type="hidden" name="subject" value="New enquiry from strummedia.com.au">
-        <input type="hidden" name="from_name" value="Strum Media Website">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="row">
-          <div><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div><label>Company</label><input type="text" name="company" placeholder="Business name"></div>
-        </div>
-        <div class="row">
-          <div><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
-          <div><label>Phone</label><input type="tel" name="phone" placeholder="04XX XXX XXX"></div>
-        </div>
-        <div><label>Project details</label><textarea name="message" required placeholder="Tell us about the build, brand or campaign..."></textarea></div>
-        <button class="btn" type="submit">Send enquiry
-          <span class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></span>
-        </button>
-        <p id="formStatus" style="display:none;margin-top:18px;font-size:15px;font-weight:600"></p>
-      </form>
+      <div class="form rv ghl-form-wrap">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/8TDDLrWWZSmbU0mYekPN"
+          style="width:100%;height:100%;border:none;border-radius:8px"
+          id="inline-8TDDLrWWZSmbU0mYekPN"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="STRUM WEBSITE ENQUIRY"
+          data-height="674"
+          data-layout-iframe-id="inline-8TDDLrWWZSmbU0mYekPN"
+          data-form-id="8TDDLrWWZSmbU0mYekPN"
+          data-cookie-consent="true"
+          data-cookie-consent-provider="auto"
+          title="STRUM WEBSITE ENQUIRY"
+        ></iframe>
+      </div>
 
       <div class="cdetails rv">
         <div class="item"><h2>Email</h2><a href="mailto:admin@strummarketing.com.au">admin@strummarketing.com.au</a></div>
@@ -702,29 +705,7 @@
 })();
 </script>
 
-<script>
-  /* contact form -> Web3Forms (AJAX, stays on page) */
-  (function(){
-    var f=document.getElementById('contactForm'); if(!f) return;
-    var status=document.getElementById('formStatus');
-    f.addEventListener('submit',function(e){
-      e.preventDefault();
-      var btn=f.querySelector('button[type=submit]'); var orig=btn.innerHTML;
-      btn.disabled=true; btn.style.opacity=.6; if(status) status.style.display='none';
-      fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-        .then(function(r){return r.json();})
-        .then(function(j){
-          if(j.success){ f.reset();
-            if(status){status.textContent="Thanks — we've got your enquiry and we'll be in touch shortly.";status.style.color='var(--orange)';status.style.display='block';}
-          } else { throw new Error(); }
-        })
-        .catch(function(){
-          if(status){status.textContent="Sorry, something went wrong. Please email admin@strummarketing.com.au.";status.style.color='#c0392b';status.style.display='block';}
-        })
-        .finally(function(){ btn.disabled=false; btn.style.opacity=1; btn.innerHTML=orig; });
-    });
-  })();
-</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
 <script>
 (function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
