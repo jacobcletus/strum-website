@@ -544,18 +544,22 @@
     text-transform:uppercase;font-weight:600;color:var(--orange)}
   .ab-cl-tag::before{content:"";width:24px;height:2px;background:var(--orange)}
   /* the rest — uniform, dimmed so Delta stays the hero */
-  /* 24 logos -> clean borderless wall, 6 x 4, evenly spaced & optically balanced */
-  .ab-cl-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  /* 32 logos on a doubled column grid (each logo spans 2) so a short last row can sit centred */
+  .ab-cl-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
     gap:clamp(30px,3.6vw,60px) clamp(24px,2.8vw,48px);margin-top:clamp(6px,1.4vw,18px)}
+  .ab-cl-grid .cell{grid-column:span 2}
+  .ab-cl-grid .cell:nth-last-child(2){grid-column:5 / span 2}   /* desktop 6 across: last 2 centred */
   .ab-cl-grid .cell{display:flex;align-items:center;justify-content:center;min-height:clamp(70px,7.4vw,98px)}
   .ab-cl-grid img{max-height:42px;max-width:100%;width:auto;height:auto;object-fit:contain;
     opacity:.6;transition:opacity .3s,transform .35s}
   .ab-cl-grid .cell:hover img{opacity:1;transform:scale(1.06)}
   .ab-cl-grid img.s-tall{max-height:60px}
   .ab-cl-grid img.s-mid{max-height:51px}
-  @media(max-width:900px){ .ab-cl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(26px,4vw,40px)} } /* 24 -> 4 x 6 */
+  @media(max-width:900px){ .ab-cl-grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:clamp(26px,4vw,40px)}
+    .ab-cl-grid .cell:nth-last-child(2){grid-column:auto / span 2} } /* tablet 4 across: 4 x 8, even */
   @media(max-width:560px){
-    .ab-cl-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 18px}              /* 24 -> 3 x 8 */
+    .ab-cl-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:26px 18px}
+    .ab-cl-grid .cell:nth-last-child(2){grid-column:2 / span 2}   /* phone 3 across: last 2 centred */
     .ab-cl-grid .cell{min-height:60px}
     .ab-cl-grid img{max-height:32px;max-width:100%}
     .ab-cl-grid img.s-tall{max-height:46px}
@@ -769,38 +773,45 @@
         <span class="ab-lbl">Our Clients</span>
         <h2>Trusted by the people who <em>build.</em></h2>
       </div>
-      <div class="ab-cl-feature">
-        <img loading="lazy" src="logos/delta-group.webp" alt="Delta Group" width="625" height="125">
-      </div>
       <div class="ab-cl-grid">
         <!-- row 1 -->
-        <div class="cell"><img loading="lazy" class="s-mid" src="logos/whelan.webp" alt="Whelan The Wrecker" width="852" height="432"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/evans.webp" alt="Evans" width="1500" height="983"></div>
-        <div class="cell"><img loading="lazy" src="logos/oreana.webp" alt="Oreana" width="2901" height="501"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/qest.webp" alt="Qest Infrastructure" width="650" height="384"></div>
-        <div class="cell"><img loading="lazy" src="logos/kappacon.webp" alt="kappaCON" width="1968" height="411"></div>
-        <div class="cell"><img loading="lazy" src="logos/varcon.webp" alt="Varcon Group" width="1202" height="220"></div>
-        <!-- row 2 -->
-        <div class="cell"><img loading="lazy" src="logos/my-robes.webp" alt="My Robes" width="500" height="72"></div>
-        <div class="cell"><img loading="lazy" src="logos/cma.svg" alt="CMA Contracting" width="277" height="90"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/browns-piling.svg" alt="Browns Piling" width="238" height="90"></div>
-        <div class="cell"><img loading="lazy" src="logos/skipz.webp" alt="Skipz Recycling" width="285" height="100"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/dundee-rock.webp" alt="Dundee Rock" width="1000" height="228"></div>
-        <div class="cell"><img loading="lazy" src="logos/liam-co.webp" alt="Liam &amp; Co" width="2302" height="324"></div>
-        <!-- row 3 -->
-        <div class="cell"><img loading="lazy" src="logos/vpd.webp" alt="VPD Construction" width="350" height="116"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/profec.webp" alt="Profec" width="517" height="448"></div>
-        <div class="cell"><img loading="lazy" src="logos/delta-recycling.svg" alt="Delta Recycling" width="168" height="30"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/ray-white.webp" alt="Ray White acreage property tour by Strum Media" width="400" height="400"></div>
-        <div class="cell"><img loading="lazy" src="logos/muv.webp" alt="MUV" width="4359" height="815"></div>
-        <div class="cell"><img loading="lazy" class="s-tall" src="logos/widi-ngaruwa.webp" alt="Widi Ngaruwa Aboriginal Contractors" width="305" height="255"></div>
-        <!-- row 4 -->
-        <div class="cell"><img loading="lazy" src="logos/brc-piling-white.webp" alt="BRC Piling &amp; Foundation" width="480" height="272"></div>
         <div class="cell"><img loading="lazy" class="s-tall" src="logos/jag-sq.webp" alt="JAG SQ Developments" width="700" height="625"></div>
-        <div class="cell"><img loading="lazy" src="logos/downer.svg" alt="Downer" width="148" height="41"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/browns-piling.svg" alt="Browns Piling" width="238" height="90"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/mercs-projects.webp" alt="Mercs Projects &amp; Developments" width="481" height="260"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/whelan.webp" alt="Whelan The Wrecker" width="852" height="432"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/eph.webp" alt="EPH" width="478" height="200"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/qest.webp" alt="Qest Infrastructure" width="650" height="384"></div>
+        <!-- row 2 -->
+        <div class="cell"><img loading="lazy" src="logos/delta-group.webp" alt="Delta Group" width="625" height="125"></div>
+        <div class="cell"><img loading="lazy" src="logos/kappacon.webp" alt="kappaCON" width="1968" height="411"></div>
+        <div class="cell"><img loading="lazy" src="logos/sjr-building-group.webp" alt="SJR Building Group" width="608" height="150"></div>
+        <div class="cell"><img loading="lazy" src="logos/oreana.webp" alt="Oreana" width="2901" height="501"></div>
         <div class="cell"><img loading="lazy" class="s-tall" src="logos/yuniq.webp" alt="Yuniq Homes &amp; Developments" width="1200" height="806"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/holmes-plumbing.webp" alt="Holmes Plumbing Co" width="624" height="260"></div>
+        <!-- row 3 -->
+        <div class="cell"><img loading="lazy" src="logos/kover-white.webp" alt="Kover Construction" width="855" height="268"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/bandeys-roofing.webp" alt="Bandeys Roofing" width="304" height="260"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/widi-ngaruwa.webp" alt="Widi Ngaruwa Aboriginal Contractors" width="305" height="255"></div>
+        <div class="cell"><img loading="lazy" src="logos/cma.svg" alt="CMA Contracting" width="277" height="90"></div>
+        <div class="cell"><img loading="lazy" src="logos/muv.webp" alt="MUV" width="4359" height="815"></div>
+        <div class="cell"><img loading="lazy" src="logos/skipz.webp" alt="Skipz Recycling" width="285" height="100"></div>
+        <!-- row 4 -->
+        <div class="cell"><img loading="lazy" src="logos/collab-electrical.webp" alt="Collab Electrical Group" width="584" height="150"></div>
         <div class="cell"><img loading="lazy" src="logos/delta-rent.svg" alt="Delta Rent" width="130" height="29"></div>
-        <div class="cell"><img loading="lazy" src="logos/kover.webp" alt="Kover Construction" width="855" height="268"></div>
+        <div class="cell"><img loading="lazy" src="logos/brc-piling-white.webp" alt="BRC Piling &amp; Foundation" width="480" height="272"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/profec.webp" alt="Profec" width="517" height="448"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/axis-imaging.webp" alt="Axis Imaging" width="312" height="150"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/ray-white.webp" alt="Ray White acreage property tour by Strum Media" width="400" height="400"></div>
+        <!-- row 5 -->
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/techs4best.webp" alt="Techs4Best Solutions" width="623" height="200"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/head2toe.webp" alt="Head2Toe Physiotherapy &amp; Podiatry" width="642" height="200"></div>
+        <div class="cell"><img loading="lazy" src="logos/my-robes.webp" alt="My Robes" width="500" height="72"></div>
+        <div class="cell"><img loading="lazy" src="logos/vpd.webp" alt="VPD Construction" width="350" height="116"></div>
+        <div class="cell"><img loading="lazy" src="logos/delta-recycling.svg" alt="Delta Recycling" width="168" height="30"></div>
+        <div class="cell"><img loading="lazy" class="s-mid" src="logos/esg.webp" alt="ESG" width="483" height="200"></div>
+        <!-- row 6 -->
+        <div class="cell"><img loading="lazy" src="logos/varcon.webp" alt="Varcon Group" width="1202" height="220"></div>
+        <div class="cell"><img loading="lazy" class="s-tall" src="logos/perfect-edge.webp" alt="Perfect Edge Carpentry" width="303" height="260"></div>
       </div>
     </div>
   </div>
