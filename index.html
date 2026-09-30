@@ -527,6 +527,7 @@
   .fr-item .go svg{width:14px;height:14px;fill:currentColor}
   .fr-item:hover .go{gap:13px;color:var(--orange)}
 </style>
+<link rel="preload" as="image" href="hero-2026-poster.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -568,7 +569,10 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-media"><video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  <div class="hero-media"><video poster="hero-2026-poster.jpg" autoplay muted loop playsinline preload="auto">
+    <source src="hero-2026.mp4" type="video/mp4" media="(min-width: 768px)">
+    <source src="hero-2026-mobile.mp4" type="video/mp4">
+  </video></div>
   <div class="hero-foot">
     <h1 class="wordmark">Strum.</h1>
     <span class="hero-label">Australia</span>
