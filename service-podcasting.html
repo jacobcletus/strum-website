@@ -570,6 +570,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -785,7 +789,7 @@
     <div class="twocol rv">
       <h2>One sit-down, a month of content</h2>
       <div class="body">
-        <p>Strum Media produces multi-camera video podcasts for Melbourne businesses and personal brands. We handle the full setup, capture, edit and colour — so all you have to do is show up and talk.</p>
+        <p>Strum Media produces multi-camera video podcasts for <a class="ctx" href="corporate-media.html">Melbourne businesses</a> and <a class="ctx" href="personal-brand-media.html">personal brands</a>. We handle the full setup, capture, edit and colour — so all you have to do is show up and talk.</p>
         <p>Every episode is cut down into short-form clips for every platform, so a single sit-down becomes a month of content across your channels. We can also manage distribution and hosting to get it published.</p>
         </div>
     </div>
@@ -950,12 +954,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

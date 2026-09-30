@@ -526,6 +526,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -753,7 +757,7 @@
       <div class="cs-body">
         <p>The Hume Anglican Grammar school development was captured through full media coverage for Profect1 Group, showcasing the progress, detail and execution behind their roofing works on site.</p>
         <p>Our team documented the school construction project through professional video, photography, drone content and social-first Instagram reels, highlighting the installation of major roofing systems across the development. The content focused on the scale of the works, the coordination required across site and the detailed craftsmanship behind the roofing, flashings, drainage systems and finishing elements.</p>
-        <p>Created for Instagram, website use, project marketing and long-term portfolio visibility, this project helped showcase Profect1 Group's capability across school developments, commercial construction, roofing systems and staged project delivery throughout Victoria.</p>
+        <p>Created for Instagram, website use, project marketing and long-term portfolio visibility, this project helped showcase Profect1 Group's capability across <a class="ctx" href="developments-media.html">school developments</a>, commercial construction, roofing systems and staged project delivery throughout Victoria.</p>
       </div>
     </div>
   </div>
@@ -902,12 +906,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

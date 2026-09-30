@@ -565,6 +565,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -780,7 +784,7 @@
     <div class="twocol rv">
       <h2>Stills that document the work properly</h2>
       <div class="body">
-        <p>Strum Media shoots commercial, construction and architectural photography across Melbourne and regional Victoria. From active sites to finished builds, we capture stills that show the work at its best and stand up in print and on screen.</p>
+        <p>Strum Media shoots commercial, <a class="ctx" href="construction-media.html">construction</a> and architectural photography across Melbourne and regional Victoria. From active sites to finished builds, we capture stills that show the work at its best and stand up in print and on screen.</p>
         <p>Site and product stills, architectural and real estate photography, corporate headshots, floor plans and drone imagery — delivered print-ready and sharp for capability statements, tenders, listings, decks and websites.</p>
         </div>
     </div>
@@ -819,7 +823,7 @@
   <div class="wrap">
     <div class="svp-head rv"><h2>Common <span class="dot">questions.</span></h2><div class="svp-rule"><span class="ln l"></span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span><span class="ln r"></span></div></div>
     <div class="faq rv">
-      <details><summary>Do you photograph construction sites and finished builds?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We shoot active construction sites, progress milestones and completed builds across Melbourne and regional Victoria, for construction, property and corporate clients.</div></details>
+      <details><summary>Do you photograph construction sites and finished builds?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We shoot active construction sites, progress milestones and completed builds across Melbourne and regional Victoria, for construction, property and <a class="ctx" href="corporate-media.html">corporate clients</a>.</div></details>
       <details><summary>What types of photography do you offer?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Commercial and site photography, architectural and real estate stills, corporate headshots, product photography, floor plans and drone imagery.</div></details>
       <details><summary>Are the photos print-ready for tenders and capability statements?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Every image is delivered high-resolution and print-ready, so it works across capability statements, tenders, listings, decks and your website.</div></details>
       <details><summary>Can you photograph and film in the same visit?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Photography pairs with our videography and drone services, so we can capture stills, video and aerials in a single site visit.</div></details>
@@ -952,12 +956,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

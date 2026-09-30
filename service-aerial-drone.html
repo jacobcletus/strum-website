@@ -569,6 +569,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -784,7 +788,7 @@
     <div class="twocol rv">
       <h2>Angles you can't get from the ground</h2>
       <div class="body">
-        <p>Strum Media flies licensed aerial and FPV drone work across Melbourne and regional Victoria — capturing construction sites, infrastructure and developments from the air. Aerials give scale, movement and context that ground footage simply can't, whether it's a single hero shot or ongoing progress capture.</p>
+        <p>Strum Media flies licensed aerial and FPV drone work across Melbourne and regional Victoria — capturing <a class="ctx" href="construction-media.html">construction sites</a>, <a class="ctx" href="infrastructure-media.html">infrastructure</a> and developments from the air. Aerials give scale, movement and context that ground footage simply can't, whether it's a single hero shot or ongoing progress capture.</p>
         <p>From smooth cinematic aerials to fast FPV fly-throughs, plus site mapping and aerial stills, every flight is planned around your site and delivered ready for tenders, marketing, progress reporting and social media.</p>
         </div>
     </div>
@@ -824,7 +828,7 @@
     <div class="svp-head rv"><h2>Common <span class="dot">questions.</span></h2><div class="svp-rule"><span class="ln l"></span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span><span class="ln r"></span></div></div>
     <div class="faq rv">
       <details><summary>Are your drone operators licensed?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Our aerial and FPV work is flown by licensed drone operators, and every flight is planned to meet the relevant airspace and site requirements.</div></details>
-      <details><summary>Can you fly over active construction sites?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We regularly capture active construction sites, infrastructure and developments, planning each flight around site conditions, exclusion zones and safety requirements.</div></details>
+      <details><summary>Can you fly over active construction sites?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We regularly capture active construction sites, infrastructure and <a class="ctx" href="developments-media.html">developments</a>, planning each flight around site conditions, exclusion zones and safety requirements.</div></details>
       <details><summary>What is the difference between aerial and FPV drone?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Standard aerial drones capture smooth, stable cinematic shots and mapping, while FPV drones fly fast, dynamic paths through and around a site for high-energy footage. We use whichever suits the project — often both.</div></details>
       <details><summary>Can you capture aerial stills and site mapping too?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Alongside video we shoot high-resolution aerial stills and site mapping imagery, useful for progress reporting, marketing and planning.</div></details>
       </div>
@@ -956,12 +960,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

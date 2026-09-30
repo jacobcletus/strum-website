@@ -526,6 +526,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -752,7 +756,7 @@
         <div><span class="k">Year</span><span class="v">2026</span></div>
       </aside>
       <div class="cs-body">
-        <p>This project was captured for Holmes Plumbing Company on a multi-residential development in Prahran, delivered alongside Fabric Build.</p>
+        <p>This project was captured for Holmes Plumbing Company on a <a class="ctx" href="residential-development-media.html">multi-residential development</a> in Prahran, delivered alongside Fabric Build.</p>
         <p>The development consists of 15 three-storey townhouses constructed over a combined basement. Each residence includes a double garage, lift, laundry and wine cellar, creating a complex project that required careful coordination across multiple levels and services.</p>
         <p>Our coverage focused on showcasing Holmes Plumbing&rsquo;s involvement in the build, capturing the scale of the development, the team on site and the work being delivered throughout the project.</p>
         <p>The final content was created to highlight Holmes Plumbing&rsquo;s role in a significant residential development while showcasing their experience working alongside leading builders on complex projects across Melbourne.</p>
@@ -915,12 +919,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

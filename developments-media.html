@@ -593,6 +593,10 @@
   .faq details[open] summary .pl{background:var(--orange);border-color:var(--orange);transform:rotate(45deg)}
   .faq details[open] summary .pl svg{fill:#fff}
   .faq .ans{padding:0 0 clamp(22px,3vh,30px);font-size:16px;line-height:1.66;color:var(--grey);max-width:70ch}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -865,7 +869,7 @@
 <section class="pad" style="background:var(--offwhite)">
   <div class="wrap rv">
     <div class="svp-head"><h2>See it in <span class="dot">action.</span></h2><div class="svp-rule"><span class="ln l"></span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span><span class="ln r"></span></div></div>
-    <p style="text-align:center;color:var(--grey);font-size:15.5px;max-width:64ch;margin:0 auto clamp(26px,4vh,38px)">We capture development and construction projects across Victoria. Our coverage of the Hume Anglican Grammar development — full video, drone, photography and social reels for builder-developer Profect1 Group — shows how we document a staged project and turn it into marketing content.</p>
+    <p style="text-align:center;color:var(--grey);font-size:15.5px;max-width:64ch;margin:0 auto clamp(26px,4vh,38px)">We capture development and <a class="ctx" href="construction-media.html">construction projects</a> across Victoria. Our coverage of the Hume Anglican Grammar development — full video, drone, photography and social reels for builder-developer Profect1 Group — shows how we document a staged project and turn it into marketing content.</p>
     <div class="lblrow" style="justify-content:center"><a class="btn-ghost" href="project-hume-anglican-grammar.html">View the Hume Anglican Grammar project <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;flex:none;margin-left:2px" aria-hidden="true"><path d="M5 12h12.2l-4.6-4.6L14 6l7 7-7 7-1.4-1.4 4.6-4.6H5z"/></svg></a></div>
   </div>
 </section>
@@ -1004,12 +1008,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

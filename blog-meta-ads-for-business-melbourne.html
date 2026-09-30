@@ -1089,7 +1089,7 @@
       <p>Meta Ads are paid ads that run across Meta&rsquo;s platforms, including Facebook, Instagram, Messenger and the Meta Audience Network. You choose an objective, such as generating leads or driving website visits, and Meta shows your ad to people it thinks are likely to respond.</p>
 
       <h3 class="faq-q">Do Meta Ads work for B2B businesses?</h3>
-      <p>They can, particularly for trades, construction, professional services and other businesses where decision makers are also everyday Facebook and Instagram users. The audience is often smaller and the sales cycle longer, so it is even more important to measure lead quality and outcomes rather than volume.</p>
+      <p>They can, particularly for <a class="inl" href="blog-video-content-for-plumbers-and-trades.html">trades</a>, construction, professional services and other businesses where decision makers are also everyday Facebook and Instagram users. The audience is often smaller and the sales cycle longer, so it is even more important to measure lead quality and outcomes rather than volume.</p>
 
       <h3 class="faq-q">What is a good cost per lead in Australia?</h3>
       <p>There is no single number. It varies by industry, location, offer, creative and how a lead is defined. A better question is what a lead is worth to your business, and what you can afford to pay for a qualified lead or a customer.</p>
@@ -1250,12 +1250,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

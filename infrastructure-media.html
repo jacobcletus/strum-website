@@ -593,6 +593,10 @@
   .faq details[open] summary .pl{background:var(--orange);border-color:var(--orange);transform:rotate(45deg)}
   .faq details[open] summary .pl svg{fill:#fff}
   .faq .ans{padding:0 0 clamp(22px,3vh,30px);font-size:16px;line-height:1.66;color:var(--grey);max-width:70ch}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -888,11 +892,11 @@
     <div class="svp-head rv"><h2>Common <span class="dot">questions.</span></h2><div class="svp-rule"><span class="ln l"></span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span><span class="ln r"></span></div></div>
     <div class="faq rv">
       <details><summary>Do you cover large-scale infrastructure projects?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We document bridges, roads, rail, water, energy and major civil projects across Melbourne and Victoria, from the air and the ground.</div></details>
-      <details><summary>Can you capture aerial and drone footage of infrastructure?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Aerial and drone coverage is one of our core services — ideal for showing the scale and complexity of infrastructure that is impossible to capture from the ground.</div></details>
+      <details><summary>Can you capture aerial and drone footage of infrastructure?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. <a class="ctx" href="service-aerial-drone.html">Aerial and drone coverage</a> is one of our core services — ideal for showing the scale and complexity of infrastructure that is impossible to capture from the ground.</div></details>
       <details><summary>Can you handle progress and stakeholder reporting content?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We document projects over their timeline and produce content for progress reports, stakeholder updates, community engagement and presentations.</div></details>
       <details><summary>Can you film around live infrastructure, traffic or shutdowns?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We are used to working around live sites, traffic and shutdown windows — completing site inductions and staying clear of the works.</div></details>
       <details><summary>Can you document a project over its full timeline?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We return to site at key milestones to capture progress from early works through to completion.</div></details>
-      <details><summary>Which sectors do you cover?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Bridges and roads, rail and transport, water and utilities, energy and renewables, and major civil projects — for government bodies and the contractors delivering the work.</div></details>
+      <details><summary>Which sectors do you cover?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Bridges and roads, rail and transport, water and utilities, energy and renewables, and major civil projects — for <a class="ctx" href="government-media.html">government bodies</a> and the contractors delivering the work.</div></details>
       <details><summary>Do you travel to regional infrastructure projects?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We are Melbourne-based and travel across Victoria for infrastructure projects, regional sites included.</div></details>
       </div>
   </div>
@@ -1019,12 +1023,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

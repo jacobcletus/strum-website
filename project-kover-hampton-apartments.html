@@ -526,6 +526,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -752,7 +756,7 @@
         <div><span class="k">Year</span><span class="v">2026</span></div>
       </aside>
       <div class="cs-body">
-        <p>This project was captured for Kover following the completion of an 18-apartment luxury development in Hampton.</p>
+        <p>This project was captured for Kover following the completion of an <a class="ctx" href="residential-development-media.html">18-apartment luxury development</a> in Hampton.</p>
         <p>Kover delivered the full carpentry package across the project, with a strong focus on precision, consistency and architectural detail throughout each residence. The finished development features floor-to-ceiling doors, custom single rebate jambs, brushed bronze fixtures and carefully executed interior finishes.</p>
         <p>Our coverage focused on showcasing the craftsmanship behind the completed spaces, highlighting the finer details, premium materials and level of finish delivered across the development.</p>
         <p>The final content was created to position Kover&rsquo;s work at the premium end of residential construction, while documenting the quality and attention to detail that went into bringing the project to completion.</p>
@@ -907,12 +911,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

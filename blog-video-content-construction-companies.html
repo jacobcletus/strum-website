@@ -963,7 +963,7 @@
 
       <h2>Video production for construction in Melbourne</h2>
 
-      <p>Strum Media produces <a class="inl" href="construction-media.html">video and photography for construction companies</a> across Melbourne and Victoria &mdash; project films, progress documentation, <a class="inl" href="service-aerial-drone.html">drone and FPV</a>, <a class="inl" href="service-content-creation.html">short-form social content</a>, and recruitment and culture pieces.</p>
+      <p>Strum Media produces <a class="inl" href="construction-media.html">video and photography for construction companies</a> across Melbourne and Victoria &mdash; <a class="inl" href="service-videography.html">project films</a>, progress documentation, <a class="inl" href="service-aerial-drone.html">drone and FPV</a>, <a class="inl" href="service-content-creation.html">short-form social content</a>, and <a class="inl" href="corporate-media.html">recruitment and culture pieces</a>.</p>
 
       <p>We work on active sites, around programs and inductions, with an understanding of how construction projects actually run.</p>
     </div>
@@ -1094,12 +1094,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

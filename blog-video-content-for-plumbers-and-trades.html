@@ -1024,7 +1024,7 @@
 
       <h2>Where the content actually gets used</h2>
 
-      <p>One day of filming on a good job should keep paying off long after the job is finished. For a trade business, the main places it earns its keep are:</p>
+      <p>One day of <a class="inl" href="service-videography.html">filming</a> on a good job should keep paying off long after the job is finished. For a trade business, the main places it earns its keep are:</p>
 
       <ul>
         <li><strong>Your website.</strong> Real project photos instead of stock images make you look like the business you actually are.</li>
@@ -1059,7 +1059,7 @@
       <p>Real jobs, real people and real progress. The team on site, the scale of a development, a tidy piece of work before it gets covered, and short updates across a build. It does not need to be polished every time, but it does need to be yours.</p>
 
       <h3 class="faq-q">Does Strum Media work with trade businesses?</h3>
-      <p>Yes. We create video, photo and drone content for plumbers, electricians, builders and other trades across Melbourne and Victoria, like our <a class="inl" href="project-holmes-plumbing-prahran.html">work for Holmes Plumbing Company in Prahran</a>. <a class="inl" href="contact.html">Get in touch</a> to talk through what you need.</p>
+      <p>Yes. We create <a class="inl" href="construction-media.html">video, photo and drone content</a> for plumbers, electricians, builders and other trades across Melbourne and Victoria, like our <a class="inl" href="project-holmes-plumbing-prahran.html">work for Holmes Plumbing Company in Prahran</a>. <a class="inl" href="contact.html">Get in touch</a> to talk through what you need.</p>
 
       <div class="pull"><p>The builder&rsquo;s name comes down with the hoarding. Your content stays.</p></div>
 
@@ -1196,12 +1196,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

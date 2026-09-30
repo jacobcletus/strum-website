@@ -887,7 +887,7 @@
 
       <p>When a developer is deciding who to award the next job to, &ldquo;we built this&rdquo; is a weaker argument than &ldquo;here's how we built it.&rdquo; Progress footage shows sequencing, safety, problem-solving and scale. It's the difference between a portfolio and proof.</p>
 
-      <p>This matters most on the projects that were genuinely hard. A basement dig through rock, a demolition next to a live school, a slab poured in a wet Melbourne winter. Nobody can tell any of that happened by looking at the finished product.</p>
+      <p>This matters most on the projects that were genuinely hard. A basement dig through rock, <a class="inl" href="demolition-media.html">a demolition next to a live school</a>, a slab poured in a wet Melbourne winter. Nobody can tell any of that happened by looking at the finished product.</p>
 
       <div class="pull"><p>You can't go back and film a demolition after the building is gone.</p></div>
 
@@ -905,7 +905,7 @@
       </div>
 
       <h3>1. Tenders and capability statements</h3>
-      <p>Most tender submissions look identical &mdash; same claims, same stock photos, same language about safety and quality. A 60-second progress film of a comparable project does more than three pages of text. If you're bidding for work with government, education or large developers, video in your capability statement is becoming an expectation rather than a differentiator.</p>
+      <p>Most tender submissions look identical &mdash; same claims, same stock photos, same language about safety and quality. A 60-second progress film of a comparable project does more than three pages of text. If you're bidding for work with <a class="inl" href="government-media.html">government</a>, education or large developers, video in your capability statement is becoming an expectation rather than a differentiator.</p>
 
       <h3>2. Client confidence during the build</h3>
       <p>Developers and owners are spending millions and often can't visit site regularly. Monthly progress content &mdash; a short edit, a set of drone stills &mdash; keeps them informed and reassured. It also reduces the number of &ldquo;how's it tracking?&rdquo; phone calls, because the answer arrives before the question.</p>
@@ -983,7 +983,7 @@
 
       <h2>Filming site progress in Melbourne</h2>
 
-      <p>At Strum Media we document construction, demolition, infrastructure and property projects across Melbourne and Victoria &mdash; <a class="inl" href="service-videography.html">progress video</a>, <a class="inl" href="service-photography.html">photography</a>, drone and FPV, plus the <a class="inl" href="service-content-creation.html">short-form content</a> that keeps your social channels active while the build runs.</p>
+      <p>At Strum Media we document <a class="inl" href="construction-media.html">construction</a>, demolition, <a class="inl" href="infrastructure-media.html">infrastructure</a> and property projects across Melbourne and Victoria &mdash; <a class="inl" href="service-videography.html">progress video</a>, <a class="inl" href="service-photography.html">photography</a>, drone and FPV, plus the <a class="inl" href="service-content-creation.html">short-form content</a> that keeps your social channels active while the build runs.</p>
 
       <p>We work around site conditions, inductions and program constraints, and we understand that filming can't slow the job down. You can see how this plays out on the <a class="inl" href="project-clayton-business-park.html">Clayton Business Park demolition</a> and the <a class="inl" href="project-scotch-hill-gardens.html">Scotch Hill Gardens early works</a>.</p>
 
@@ -1116,12 +1116,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

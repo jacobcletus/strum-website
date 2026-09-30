@@ -565,6 +565,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -780,7 +784,7 @@
     <div class="twocol rv">
       <h2>End-to-end video for the way you actually work</h2>
       <div class="body">
-        <p>Strum Media is a Melbourne videography team built around construction, property, infrastructure and corporate work. We film across metropolitan Melbourne and regional Victoria — and travel Australia-wide for larger projects — capturing everything from early site works to finished handover.</p>
+        <p>Strum Media is a Melbourne videography team built around <a class="ctx" href="construction-media.html">construction</a>, property, infrastructure and <a class="ctx" href="corporate-media.html">corporate work</a>. We film across metropolitan Melbourne and regional Victoria — and travel Australia-wide for larger projects — capturing everything from early site works to finished handover.</p>
         <p>Every project is directed, shot and edited in-house: progress films that document a build over time, project showcases for tenders and capability statements, corporate interviews and testimonials, and cinematic brand films made to perform on social media and the big screen.</p>
         </div>
     </div>
@@ -820,7 +824,7 @@
   <div class="wrap">
     <div class="svp-head rv"><h2>Common <span class="dot">questions.</span></h2><div class="svp-rule"><span class="ln l"></span><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1l2.4 6.9L21 4.5l-3.4 6.4 6.9 1.1-6.9 1.1L21 19.5l-6.6-3.4L12 23l-2.4-6.9L3 19.5l3.4-6.4L-.5 12l6.9-1.1L3 4.5l6.6 3.4z"/></svg></span><span class="ln r"></span></div></div>
     <div class="faq rv">
-      <details><summary>Do you film construction and property projects across Melbourne?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We film construction, property, infrastructure and corporate projects across metropolitan Melbourne and regional Victoria, and we travel Australia-wide for larger or ongoing work.</div></details>
+      <details><summary>Do you film construction and property projects across Melbourne?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. We film construction, property, <a class="ctx" href="infrastructure-media.html">infrastructure</a> and corporate projects across metropolitan Melbourne and regional Victoria, and we travel Australia-wide for larger or ongoing work.</div></details>
       <details><summary>What types of video do you produce?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Progress films, project showcases, corporate interviews, testimonials, commercial and brand videos, event coverage and cinematic films — all directed, shot and edited end to end.</div></details>
       <details><summary>Can I use the footage for tenders, social media and my website?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Every project is delivered in cuts ready for tenders and capability statements, social media, and your website — so a single shoot works across every channel.</div></details>
       <details><summary>Do you offer ongoing filming for long construction projects?<span class="pl"><svg viewBox="0 0 24 24"><path d="M11 4h2v16h-2z"/><path d="M4 11h16v2H4z"/></svg></span></summary><div class="ans">Yes. Progress films that document a build across its full timeline are one of our core offerings — we capture the work in stages and edit it into milestone and handover videos.</div></details>
@@ -953,12 +957,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>

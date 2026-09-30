@@ -526,6 +526,10 @@
   header:not(.scrolled) .nav ul a.nav-active{color:var(--orange)!important;opacity:1}
   .dd-inner a.nav-active{color:var(--orange)!important;background:var(--offwhite)}
   .mobile-menu a.nav-active{color:var(--orange)!important}
+
+  /* contextual in-text links: subtle underline, orange on hover */
+  .ctx{border-bottom:1px solid rgba(20,20,20,.28);transition:color .2s,border-color .2s}
+  .ctx:hover{color:var(--orange);border-color:var(--orange)}
 </style>
 <style>
   /* mobile navigation */
@@ -748,7 +752,7 @@
       </aside>
       <div class="cs-body">
         <p>The Pascoe Vale Residence is a luxury home build being documented from start to finish, capturing the full journey from excavation and basement construction through to structural milestones, finishes and final completion.</p>
-        <p>This project focuses on showcasing the craftsmanship, planning and precision behind a high-end residential development in Melbourne. From underground services and structural preparation to the completion of the suspended slab, each stage has been captured through cinematic video, photography, drone content and progress-focused social media assets.</p>
+        <p>This project focuses on showcasing the craftsmanship, planning and precision behind a <a class="ctx" href="residential-development-media.html">high-end residential development</a> in Melbourne. From underground services and structural preparation to the completion of the suspended slab, each stage has been captured through cinematic video, photography, drone content and progress-focused social media assets.</p>
         <p>Built with intention and driven by a strong architectural vision, the residence reflects the detail and discipline required to bring a luxury home to life. The content was created to document the full construction process, highlight key project milestones and build a premium visual story around the home as it rises from foundation to finished residence.</p>
         <p>Designed for social media, website use, project marketing and long-term portfolio visibility, this project helps showcase the quality, scale and detail behind luxury residential construction in Victoria.</p>
       </div>
@@ -907,12 +911,12 @@
 </script>
 
 <script>
-(function(){var cur=(location.pathname.split('/').pop())||'index.html';if(!cur)cur='index.html';
-var sec=cur;
-if(cur==='services.html'||cur.indexOf('service-')===0||cur.indexOf('-media.html')>-1)sec='services.html';
-else if(cur==='projects.html'||cur.indexOf('project-')===0)sec='projects.html';
-document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if((a.getAttribute('href')||'')===sec)a.classList.add('nav-active');});
-document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if((a.getAttribute('href')||'')===cur)a.classList.add('nav-active');});})();
+(function(){function k(p){p=(p||'').split('#')[0].split('?')[0].split('/').pop()||'index';return p.replace(/\.html$/,'')||'index';}
+var cur=k(location.pathname);var sec=cur;
+if(cur==='services'||cur.indexOf('service-')===0||/-media$/.test(cur))sec='services';
+else if(cur==='projects'||cur.indexOf('project-')===0)sec='projects';
+document.querySelectorAll('header .nav ul a,.mobile-menu>a').forEach(function(a){if(k(a.getAttribute('href'))===sec)a.classList.add('nav-active');});
+document.querySelectorAll('.dd-inner a,.mobile-menu .mm-sub').forEach(function(a){if(k(a.getAttribute('href'))===cur)a.classList.add('nav-active');});})();
 </script>
 </body>
 </html>
