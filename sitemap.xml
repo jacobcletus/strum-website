@@ -157,8 +157,20 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.strummedia.com.au/project-graduate-engineer-documentary</loc>
-    <lastmod>2026-07-28</lastmod>
+    <loc>https://www.strummedia.com.au/project-holmes-plumbing-prahran</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.strummedia.com.au/project-mercs-elizabeth</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.strummedia.com.au/project-kover-hampton-apartments</loc>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -215,6 +227,12 @@
     <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.strummedia.com.au/blog-video-content-for-plumbers-and-trades</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.strummedia.com.au/blog-meta-ads-for-business-melbourne</loc>

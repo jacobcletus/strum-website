@@ -462,8 +462,8 @@
 <style>
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,5vw,80px);align-items:start}
   .form{display:flex;flex-direction:column;gap:18px}
-  .ghl-form-wrap{min-height:674px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(18px,2.6vw,34px);box-shadow:0 18px 48px -24px rgba(12,12,12,.22);position:relative;overflow:hidden}
-  .ghl-form-wrap::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--orange)}
+  /* GHL form sits straight on the page: no card, no border, no accent bar */
+  .ghl-form-wrap{min-height:674px;background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;position:relative}
   .ghl-form-wrap iframe{display:block}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .form label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--grey);margin-bottom:9px}
@@ -605,7 +605,7 @@
       <div class="form rv ghl-form-wrap">
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/8TDDLrWWZSmbU0mYekPN"
-          style="width:100%;height:100%;border:none;border-radius:8px"
+          style="width:100%;height:100%;border:none;background:transparent"
           id="inline-8TDDLrWWZSmbU0mYekPN"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
