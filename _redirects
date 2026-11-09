@@ -5,3 +5,7 @@
 # Graduate Engineer project replaced by Holmes Plumbing Prahran
 /project-graduate-engineer-documentary /project-holmes-plumbing-prahran 301
 /project-graduate-engineer-documentary.html /project-holmes-plumbing-prahran 301
+
+# Old site URLs still known to Google (404s in Search Console, Nov 2026)
+/about-us /about 301
+/portfolio /projects 301
